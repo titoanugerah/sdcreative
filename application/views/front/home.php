@@ -55,81 +55,14 @@
                   <li><a href="index.html">Home</a></li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="services.html">Services</a></li>
-                  <li><a href="portfolio.html">Pages</a>
-                    <ul class="dropdown">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="services.html">Services</a>
-                        <ul class="dropdown">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li><a href="services.html">Services</a></li>
-                          <li><a href="portfolio.html">Portfolio</a>
-                            <ul class="dropdown">
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="about.html">About Us</a></li>
-                              <li><a href="services.html">Services</a></li>
-                              <li><a href="portfolio.html">Portfolio</a></li>
-                              <li><a href="contact.html">Contact</a></li>
-                              <li><a href="elements.html">Elements</a></li>
-                            </ul>
-                          </li>
-                          <li><a href="contact.html">Contact</a></li>
-                          <li><a href="elements.html">Elements</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="portfolio.html">Portfolio</a></li>
-                      <li><a href="contact.html">Contact</a></li>
-                      <li><a href="elements.html">Elements</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Mega</a>
-                    <div class="megamenu">
-                      <ul class="single-mega cn-col-4">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                      </ul>
-                      <ul class="single-mega cn-col-4">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                      </ul>
-                      <ul class="single-mega cn-col-4">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                      </ul>
-                      <ul class="single-mega cn-col-4">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="elements.html">Elements</a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
                 </ul>
 
                 <!-- Top Social Info -->
                 <div class="top-social-info ml-5">
                   <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-dribbble"></i></a>
-                  <a href="#"><i class="fa fa-flickr"></i></a>
                   <a href="#"><i class="fa fa-instagram"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                  <a href="#"><i class="fa fa-youtube"></i></a>
                 </div>
               </div>
               <!-- Nav End -->
@@ -204,16 +137,16 @@
       <div class="row align-items-end">
         <div class="col-12 col-md-9">
           <div class="nl-form mb-100">
-            <h4>Stay in touch with us</h4>
+            <h4>Cek Progress Pesanan</h4>
             <form action="#" method="post">
-              <input type="email" name="nl-email" id="nlEmail" placeholder="Email Address ...">
+              <input type="text" name="nl-email" id="nlEmail" placeholder="Masukan Pesanan">
               <button type="submit" class="d-none"></button>
             </form>
           </div>
         </div>
         <div class="col-12 col-md-3">
           <div class="view-projects-btn text-right mb-100">
-            <a href="#" class="btn pixel-btn">View Project</a>
+            <a href="#" class="btn pixel-btn">Cek Progress</a>
           </div>
         </div>
       </div>
@@ -285,36 +218,7 @@
   <!-- ##### Portfolio Area End ###### -->
 
   <!-- ##### Contact Area Start #####-->
-  <section class="contact-area section-padding-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- Section Heading -->
-          <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-            <h2>Get In Touch</h2>
-            <img src="img/core-img/x.png" alt="">
-          </div>
-        </div>
-      </div>
 
-
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-          <!-- Contact Form -->
-          <div class="contact-form-area text-center">
-            <form action="#" method="post">
-              <input type="text" name="name" class="form-control wow fadeInUp" data-wow-delay="100ms" placeholder="Name">
-              <input type="email" name="email" class="form-control wow fadeInUp" data-wow-delay="300ms" placeholder="E-mail">
-              <input type="text" name="subject" class="form-control wow fadeInUp" data-wow-delay="500ms" placeholder="Subject">
-              <textarea name="message" class="form-control wow fadeInUp" data-wow-delay="700ms" placeholder="Message"></textarea>
-              <button type="submit" class="btn pixel-btn wow fadeInUp" data-wow-delay="900ms">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
   <!-- ##### Contact Area End #####-->
 
   <!-- ##### Footer Area Start ##### -->
@@ -355,11 +259,8 @@
                 <h5 class="widget-title">Social</h5>
                 <div class="footer-social-info">
                   <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-dribbble"></i></a>
-                  <a href="#"><i class="fa fa-flickr"></i></a>
                   <a href="#"><i class="fa fa-instagram"></i></a>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                  <a href="#"><i class="fa fa-pinterest"></i></a>
+                  <a href="#"><i class="fa fa-youtube"></i></a>
                 </div>
               </div>
             </div>
@@ -382,15 +283,7 @@
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <nav class="footer-nav">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </nav>
+            <h4 style="color:white;">slogan</h4>
           </div>
         </div>
       </div>
