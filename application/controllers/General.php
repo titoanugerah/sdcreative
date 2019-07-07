@@ -17,4 +17,9 @@ class General extends CI_Controller {
 	{
 		$this->load->view('front/home');
 	}
+
+	public function login()
+	{
+		$this->load->view('login');
+	}
 }
