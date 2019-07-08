@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title><?php echo $content['webconf']->website_name; ?></title>
+	<title><?php echo $content['webconf']->website_name.' | '.ucfirst($this->session->userdata['role']); ?></title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/img/icon.ico" type="image/x-icon"/>
-
-	<!-- Fonts and icons -->
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
@@ -17,21 +15,18 @@
 			}
 		});
 	</script>
-
-	<!-- CSS Files -->
 	<link rel="stylesheet" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/css/atlantis.min.css">
-
-	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/css/demo.css">
 </head>
+
 <body>
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 
-				<a href="index.html" class="logo">
+				<a href="<?php echo base_url('dashboard'); ?>" class="logo">
 					<img src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,32 +41,10 @@
 					</button>
 				</div>
 			</div>
-			<!-- End Logo Header -->
 
-			<!-- Navbar Header -->
 			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-
 				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
-					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-								<i class="fa fa-search"></i>
-							</a>
-						</li>
-
-
 
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -85,16 +58,15 @@
 										<div class="user-box">
 											<div class="avatar-lg"><img src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+												<h4><?php echo $this->session->userdata['fullname']; ?></h4>
+												<p class="text-muted"><?php echo $this->session->userdata['email'] ?></p><a href="<?php echo base_url('profile') ?>" class="btn btn-xs btn-secondary btn-sm">Profil</a>
 											</div>
 										</div>
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">My Profile</a>
-										
-										<a class="dropdown-item" href="#">Logout</a>
+										<a class="dropdown-item" href="<?php echo base_url('profile'); ?>">Lihat Profil Saya</a>
+										<a class="dropdown-item" href="<?php echo base_url('logout'); ?>">Logout</a>
 									</li>
 								</div>
 							</ul>
@@ -116,8 +88,8 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+									<?php echo '@'.$this->session->userdata['username']; ?>
+									<span class="user-level"><?php echo $this->session->userdata['role']; ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -126,73 +98,16 @@
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#edit">
-											<span class="link-collapse">Edit Profile</span>
-										</a>
-									</li>
-									<li>
-										<a href="#settings">
-											<span class="link-collapse">Settings</span>
+										<a href="<?php echo base_url('profile'); ?>">
+											<span class="link-collapse">Profil Saya</span>
 										</a>
 									</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-					<ul class="nav nav-success">
-						<li class="nav-item active">
-							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
-								<i class="fas fa-home"></i>
-								<p>Dashboard</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="dashboard">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="<?php echo base_url('./assets/template/atlantisLite'); ?>/demo1/index.html">
-											<span class="sub-item">Dashboard 1</span>
-										</a>
-									</li>
-									<li>
-										<a href="<?php echo base_url('./assets/template/atlantisLite'); ?>/demo2/index.html">
-											<span class="sub-item">Dashboard 2</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-section">
-							<span class="sidebar-mini-icon">
-								<i class="fa fa-ellipsis-h"></i>
-							</span>
-							<h4 class="text-section">Components</h4>
-						</li>
-						<li class="nav-item">
-							<a data-toggle="collapse" href="#base">
-								<i class="fas fa-layer-group"></i>
-								<p>Base</p>
-								<span class="caret"></span>
-							</a>
-							<div class="collapse" id="base">
-								<ul class="nav nav-collapse">
-									<li>
-										<a href="components/avatars.html">
-											<span class="sub-item">Avatars</span>
-										</a>
-									</li>
-
-								</ul>
-							</div>
-						</li>
-
-
-
-
+					<ul class="nav nav-primary">
+            <?php $this->load->view($this->session->userdata['role'].'/menu'); ?>
 					</ul>
 				</div>
 			</div>
@@ -201,74 +116,7 @@
 
 		<div class="main-panel">
 			<div class="content">
-				<div class="panel-header bg-success-gradient">
-					<div class="page-inner py-5">
-						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
-							<div>
-								<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
-								<h5 class="text-white op-7 mb-2">Free Bootstrap 4 Admin Dashboard</h5>
-							</div>
-							<div class="ml-md-auto py-2 py-md-0">
-								<a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-								<a href="#" class="btn btn-secondary btn-round">Add Customer</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-inner mt--5">
-					<div class="row mt--2">
-						<div class="col-md-6">
-							<div class="card full-height">
-								<div class="card-body">
-									<div class="card-title">Overall statistics</div>
-									<div class="card-category">Daily information about statistics in system</div>
-									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0">New Users</h6>
-										</div>
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Sales</h6>
-										</div>
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-3"></div>
-											<h6 class="fw-bold mt-3 mb-0">Subscribers</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card full-height">
-								<div class="card-body">
-									<div class="card-title">Total income & spend statistics</div>
-									<div class="row py-3">
-										<div class="col-md-4 d-flex flex-column justify-content-around">
-											<div>
-												<h6 class="fw-bold text-uppercase text-success op-8">Total Income</h6>
-												<h3 class="fw-bold">$9.782</h3>
-											</div>
-											<div>
-												<h6 class="fw-bold text-uppercase text-danger op-8">Total Spend</h6>
-												<h3 class="fw-bold">$1,248</h3>
-											</div>
-										</div>
-										<div class="col-md-8">
-											<div id="chart-container">
-												<canvas id="totalIncomeChart"></canvas>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-
-				</div>
+				<?php $this->load->view($this->session->userdata['role'].'/'.$content['view_name']); ?>
 			</div>
 			<footer class="footer">
 				<div class="container-fluid">
@@ -343,99 +191,6 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/setting-demo.js"></script>
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/demo.js"></script>
-	<script>
-		Circles.create({
-			id:'circles-1',
-			radius:45,
-			value:60,
-			maxValue:100,
-			width:7,
-			text: 5,
-			colors:['#f1f1f1', '#FF9E27'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		Circles.create({
-			id:'circles-2',
-			radius:45,
-			value:70,
-			maxValue:100,
-			width:7,
-			text: 36,
-			colors:['#f1f1f1', '#2BB930'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		Circles.create({
-			id:'circles-3',
-			radius:45,
-			value:40,
-			maxValue:100,
-			width:7,
-			text: 12,
-			colors:['#f1f1f1', '#F25961'],
-			duration:400,
-			wrpClass:'circles-wrp',
-			textClass:'circles-text',
-			styleWrapper:true,
-			styleText:true
-		})
-
-		var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: ["S", "M", "T", "W", "T", "F", "S", "S", "M", "T"],
-				datasets : [{
-					label: "Total Income",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [6, 4, 9, 5, 4, 6, 4, 3, 8, 10],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}],
-					xAxes : [ {
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}]
-				},
-			}
-		});
-
-		$('#lineChart').sparkline([105,103,123,100,95,105,115], {
-			type: 'line',
-			height: '70',
-			width: '100%',
-			lineWidth: '2',
-			lineColor: '#ffa534',
-			fillColor: 'rgba(255, 165, 52, .14)'
-		});
-	</script>
+	
 </body>
 </html>

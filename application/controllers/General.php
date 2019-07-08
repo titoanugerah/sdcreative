@@ -34,4 +34,10 @@ class General extends CI_Controller {
 		$data['content']=$this->general_model->cDashboard();
 		$this->load->view('template',$data);
 	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect(base_url(''));
+	}
 }
