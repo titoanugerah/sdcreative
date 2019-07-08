@@ -9,7 +9,7 @@
   <link rel="icon" href="<?php echo base_url('./assets/template/pixel/'); ?>img/core-img/favicon.ico">
   <link rel="stylesheet" href="<?php echo base_url('./assets/template/pixel/'); ?>style.css">
   <!-- Title -->
-  <title>Brand  </title>
+  <title> <?php echo $content['webconf']->website_name; ?>  </title>
 
 </head>
 
