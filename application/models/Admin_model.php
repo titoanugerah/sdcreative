@@ -18,6 +18,12 @@ class Admin_model extends CI_Model{
     return $this->db->get_where($table, $where)->result();
   }
 
+  public function getSomeDataS($table, $whereVar, $whereVal,$status)
+  {
+    $where = array($whereVar => $whereVal, 'status' => $status);
+    return $this->db->get_where($table, $where)->result();
+  }
+
   public function getAllData($table)
   {
     return $this->db->get($table)->result();
@@ -117,7 +123,7 @@ class Admin_model extends CI_Model{
 
   public function cCategory()
   {
-    $data['category'] = $this->getAllData('category');
+    $data['category'] = $this->getSomeData('category', 'status', 1);
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'category';
     return $data;
@@ -131,7 +137,7 @@ class Admin_model extends CI_Model{
 
   public function cDetailCategory($id)
   {
-    $data['list'] = $this->getSomeData('package', 'id_category', $id);
+    $data['list'] = $this->getSomeDataS('package', 'id_category', $id,1);
     $data['detail'] = $this->getDataRow('category','id',$id);
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'detailCategory';
@@ -147,6 +153,30 @@ class Admin_model extends CI_Model{
   {
     $this->updateData('category','id',$id,'category',$this->input->post('category'));
     $this->updateData('category','id',$id,'info',$this->input->post('info'));
+  }
+
+  public function createPackage($id)
+  {
+    $data = array('package' => $this->input->post('package'), 'price' => $this->input->post('price'), 'description' => $this->input->post('description'),'pic_count' => $this->input->post('pic_count'),'id_admin' => $this->session->userdata['id'],'id_category' => $id);
+    return $this->db->insert('package', $data);
+  }
+
+  public function updatePackage()
+  {
+    $id = $this->input->post('id');
+    $data = array('package' => $this->input->post('package'), 'price' => $this->input->post('price'), 'description' => $this->input->post('description'),'pic_count' => $this->input->post('pic_count'),'id_admin' => $this->session->userdata['id']);
+    $where = array('id' => $this->input->post('id'));
+    $this->db->where($where);
+    $this->db->update('package', $data);
+  }
+
+  public function deletePackage()
+  {
+    $id = $this->input->post('id');
+    //    $where = array('id' => $this->input->post('id'));
+    //    $this->db->delete('package',$where);
+    $this->updateData('package','id',$id,'status',0);
+
   }
 }
 

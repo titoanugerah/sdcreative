@@ -5,7 +5,7 @@
         <h2 class="text-white pb-2 fw-bold">Detail Kategori <?php echo $content['detail']->category; ?></h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
-        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal">Tambah Kategori</button>
+        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal1">Tambah Paket</button>
 
       </div>
     </div>
@@ -88,7 +88,7 @@
                             <td><?php echo $item->package ?></td>
                             <td><?php echo $item->price ?></td>
                             <td><?php echo $item->pic_count; ?></td>
-                            <td> <a href="<?php echo base_url('detailPackage/'.$item->id); ?>" class="btn btn-info"> Detail </a> </td>
+                            <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id;?>">Detail</button> </td>
                           </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -133,3 +133,91 @@
   </div>
 </div>
 </div>
+
+<div class="modal fade" id="myModal1" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <center>
+          <h4> Tambah Paket</h4>
+        </center>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <form  method="post">
+        <div class="modal-body">
+          <div class="row">
+
+          <div class="form-group col-6 col-md-12">
+            <label>Nama Paket</label>
+            <input type="text" class="form-control" placeholder="Masukan nama paket" name="package">
+          </div>
+          <div class="form-group col-6 col-md-6">
+            <label>Harga</label>
+            <input type="number" class="form-control" placeholder="Masukan harga paket" name="price">
+          </div>
+          <div class="form-group col-6 col-md-6">
+            <label>Jumlah PIC</label>
+            <input type="number" class="form-control" placeholder="Masukan jumlah PIC" name="pic_count">
+          </div>
+          <div class="form-group col-6 col-md-12">
+            <label>Keterangan</label>
+            <textarea name="description" rows="4" class="form-control" placeholder="Masukan deskripsi paket"></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" name="createPackage" value="createPackage">Buat Paket</button>
+        <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+<?php foreach ($content['list'] as $item): ?>
+  <div class="modal fade" id="detail<?php echo $item->id;?>" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <center>
+            <h4> Detail Paket</h4>
+          </center>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form  method="post">
+          <div class="modal-body">
+            <div class="row">
+
+            <div class="form-group col-6 col-md-12">
+              <label>Nama Paket</label>
+            <input type="text" class="form-control"  name="id" value="<?php echo $item->id; ?>" hidden>
+            <input type="text" class="form-control" placeholder="Masukan nama paket" name="package" value="<?php echo $item->package; ?>">
+          </div>
+            <div class="form-group col-6 col-md-6">
+              <label>Harga</label>
+              <input type="number" class="form-control" placeholder="Masukan harga paket" name="price" value="<?php echo $item->price; ?>">
+            </div>
+            <div class="form-group col-6 col-md-6">
+              <label>Jumlah PIC</label>
+              <input type="number" class="form-control" placeholder="Masukan jumlah PIC" name="pic_count" value="<?php echo $item->pic_count; ?>">
+            </div>
+            <div class="form-group col-6 col-md-12">
+              <label>Keterangan</label>
+              <textarea name="description" rows="4" class="form-control" placeholder="Masukan deskripsi paket"><?php echo $item->description ?></textarea>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" name="updatePackage" value="updatePackage">Update Paket</button>
+          <button type="submit" class="btn btn-danger" name="deletePackage" value="deletePackage">Hapus Paket</button>
+          <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+<?php endforeach; ?>

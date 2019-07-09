@@ -29,6 +29,9 @@ class Admin extends CI_Controller{
   {
     if ($this->input->post('updateImage')) {$this->admin_model->updateImageCategory($id);}
     else if ($this->input->post('updateCategory')) {$this->admin_model->updateCategory($id);}
+    else if ($this->input->post('createPackage')) {$this->admin_model->createPackage($id);}
+    else if ($this->input->post('updatePackage')) {$this->admin_model->updatePackage();}
+    else if ($this->input->post('deletePackage')) {$this->admin_model->deletePackage();}
     $data['content'] = $this->admin_model->cDetailCategory($id);
     $this->load->view('template', $data);
   }
