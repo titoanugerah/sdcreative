@@ -14,8 +14,15 @@
 </li>
 <li class="nav-item <?php if($content['view_name']=='webConf'){echo 'active';} ?>">
   <a  href="<?php echo base_url('webConf'); ?>" >
-    <i class="fas fa-home"></i>
+    <i class="fas fa-broadcast-tower"></i>
     <p>Konfigurasi Web</p>
+  </a>
+</li>
+
+<li class="nav-item <?php if($content['view_name']=='category'){echo 'active';} ?>">
+  <a  href="<?php echo base_url('category'); ?>" >
+    <i class="fas fa-boxes"></i>
+    <p>Konfigurasi Kategori</p>
   </a>
 </li>
 
