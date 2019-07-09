@@ -109,6 +109,14 @@ class Admin_model extends CI_Model{
     $this->updateData('webconf','id',1,'instagram',$this->input->post('instagram'));
   }
 
+  public function cCategory()
+  {
+    $data['category'] = $this->getAllData('category');
+    $data['webconf'] = $this->getDataRow('webconf','id',1);
+    $data['view_name'] = 'category';
+    return $data;
+  }
+
 
 }
 
