@@ -144,6 +144,12 @@ class General_model extends CI_Model{
     if ($data['status']==1) {$data['session'] = $this->setSession($this->session->userdata['id']);}
     return $data;
   }
+
+  public function updateDisplayPicture()
+  {
+    if($this->updateData('account','id', $this->session->userdata['id'],'display_picture','display_picture_'.$this->session->userdata['id'].$this->uploadFile('display_picture_'.$this->session->userdata['id'], 'jpg|jpeg|png')['ext'])){$data=$this->setSession($this->session->userdata['id']);}
+    return $data;
+  }
 }
 
  ?>
