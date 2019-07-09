@@ -19,6 +19,9 @@
 	<link rel="stylesheet" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/css/atlantis.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/css/demo.css">
+	<!-- Select2-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -142,6 +145,14 @@
 		<!-- End Custom template -->
 	</div>
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/core/jquery.3.2.1.min.js"></script>
+	<script type="text/javascript">
+  $(document).ready(function() {
+    $('mySelect2').select2({
+      dropdownParent: $('#myModal2'),
+      width: '100%' // need to override the changed default
+    });
+  });
+  </script>
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/core/popper.min.js"></script>
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/core/bootstrap.min.js"></script>
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>

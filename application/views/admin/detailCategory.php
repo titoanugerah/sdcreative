@@ -5,7 +5,8 @@
         <h2 class="text-white pb-2 fw-bold">Detail Kategori <?php echo $content['detail']->category; ?></h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
-        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal1">Tambah Paket</button>
+        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal1">Tambah Paket</button>&nbsp;
+        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal2">Pulihkan Paket Terhapus</button>
 
       </div>
     </div>
@@ -221,3 +222,34 @@
   </div>
   </div>
 <?php endforeach; ?>
+
+<div class="modal fade" id="myModal2" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <center>
+          <h4> Pulihkan Paket Terhapus</h4>
+        </center>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <form  method="post" >
+        <div class="modal-body">
+          <div class="form-group col-6 col-md-12">
+            <label>Paket</label>
+            <select class="js-example" id="mySelect2" name="id">
+              <?php foreach ($content['deleted'] as $item): ?>
+                <option value="<?php echo $item->id ?>"><?php echo $item->package; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" name="restorePackage" value="restorePackage">Pulihkan</button>
+        <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>

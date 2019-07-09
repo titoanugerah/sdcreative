@@ -137,6 +137,7 @@ class Admin_model extends CI_Model{
 
   public function cDetailCategory($id)
   {
+    $data['deleted'] = $this->getSomeDataS('package', 'id_category', $id,0); 
     $data['list'] = $this->getSomeDataS('package', 'id_category', $id,1);
     $data['detail'] = $this->getDataRow('category','id',$id);
     $data['webconf'] = $this->getDataRow('webconf','id',1);
@@ -176,7 +177,12 @@ class Admin_model extends CI_Model{
     //    $where = array('id' => $this->input->post('id'));
     //    $this->db->delete('package',$where);
     $this->updateData('package','id',$id,'status',0);
+  }
 
+  public function restorePackage()
+  {
+    $id = $this->input->post('id');
+    $this->updateData('package','id',$id,'status',1);
   }
 }
 
