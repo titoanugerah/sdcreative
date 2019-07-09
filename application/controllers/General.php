@@ -37,6 +37,8 @@ class General extends CI_Controller {
 
 	public function profile()
 	{
+		if ($this->input->post('updateAccount')) {
+			if($this->general_model->updateAccount()['status']){$this->session->set_userdata($this->general_model->updateAccount()['session']);}}
 		$data['content'] = $this->general_model->cProfile();
 		$this->load->view('template', $data);
 	}
