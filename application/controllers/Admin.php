@@ -24,5 +24,11 @@ class Admin extends CI_Controller{
     $data['content'] = $this->admin_model->cCategory();
     $this->load->view('template', $data);
   }
+
+  public function detailCategory($id)
+  {
+    $data['content'] = $this->admin_model->cDetailCategory($id);
+    $this->load->view('template', $data);
+  }
 }
  ?>

@@ -123,6 +123,15 @@ class Admin_model extends CI_Model{
     return $this->updateData('category', 'id', $this->db->insert_id(), 'image', 'category_'.$this->db->insert_id().$this->uploadFile('category_'.$this->db->insert_id(),'jpg|png|jpeg')['ext']);
   }
 
+  public function cDetailCategory($id)
+  {
+    $data['detail'] = $this->getDataRow('category','id',$id);
+    $data['webconf'] = $this->getDataRow('webconf','id',1);
+    $data['view_name'] = 'detailCategory';
+    return $data;
+  }
+
+
 }
 
  ?>

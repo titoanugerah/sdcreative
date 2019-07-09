@@ -11,6 +11,7 @@ $route['logout'] = 'general/logout';
 //ADMIN AREA
 $route['webConf'] = 'admin/webConf';
 $route['category'] = 'admin/category';
+$route['detailCategory/(:any)'] = 'admin/detailCategory/$1';
 $route['dashboard'] = 'general/dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
