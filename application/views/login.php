@@ -1,3 +1,4 @@
+<?php if($this->session->userdata['login']){redirect(base_url('dashboard'));} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

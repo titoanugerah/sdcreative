@@ -65,13 +65,13 @@
     </div>
     <div class="col-md-3">
       <div class="card">
-          <div class="card-header">
-            <center>
+        <div class="card-header">
+          <center>
             Foto Profil
           </center>
-          </div>
-          <div class="card-body">
-            <center>
+        </div>
+        <div class="card-body">
+          <center>
             <div class="avatar avatar-xxl">
               <img src="<?php echo base_url('./assets/upload/'.$this->session->userdata['display_picture']); ?>" alt="..." class="avatar-img rounded-circle">
               <br><br>
@@ -80,36 +80,35 @@
               <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Ganti Foto</button>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <center>
-          <h4> Ganti Foto</h4>
-        </center>
+            <h4> Ganti Foto</h4>
+          </center>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <form role="form" enctype="multipart/form-data" method="post">
-        <div class="modal-body">
+          <div class="modal-body">
             <div class="form-group">
               <br>
             </center>
-              <input type="file" name="fileUpload" class="btn btn-primary">
-            </div>
+            <input type="file" name="fileUpload" class="btn btn-primary">
+          </div>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary" name="upload" value="upload">Upload Foto</button>
-          <button type="button" class="btn btn-grey" data-dismiss="modal">Upload Foto</button>
+          <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>
-      </div>
     </div>
   </div>
+</div>

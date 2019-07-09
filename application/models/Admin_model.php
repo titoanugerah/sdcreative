@@ -80,6 +80,36 @@ class Admin_model extends CI_Model{
     $data['view_name'] = 'webConf';
     return $data;
   }
+
+  public function uploadLogo()
+  {
+    $this->updateData('webConf','id','1','logo', 'logo'.$this->uploadFile('logo', 'jpg|jpeg|png|ico')['ext']);
+  }
+
+  public function updateGeneral()
+  {
+    $this->updateData('webconf','id',1,'website_name',$this->input->post('website_name'));
+    $this->updateData('webconf','id',1,'office_number',$this->input->post('office_number'));
+    $this->updateData('webconf','id',1,'address',$this->input->post('address'));
+  }
+
+  public function updateEmail()
+  {
+    $this->updateData('webconf','id',1,'host',$this->input->post('host'));
+    $this->updateData('webconf','id',1,'email',$this->input->post('email'));
+    $this->updateData('webconf','id',1,'password',$this->input->post('password'));
+    $this->updateData('webconf','id',1,'port',$this->input->post('port'));
+    $this->updateData('webconf','id',1,'crypto',$this->input->post('crypto'));
+  }
+
+  public function updateSocmed()
+  {
+    $this->updateData('webconf','id',1,'facebook',$this->input->post('facebook'));
+    $this->updateData('webconf','id',1,'youtube',$this->input->post('youtube'));
+    $this->updateData('webconf','id',1,'instagram',$this->input->post('instagram'));
+  }
+
+
 }
 
  ?>

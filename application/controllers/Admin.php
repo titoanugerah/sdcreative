@@ -10,6 +10,10 @@ class Admin extends CI_Controller{
 
   public function webConf()
   {
+    if ($this->input->post('upload')) {$this->admin_model->uploadLogo();}
+    if ($this->input->post('updateEmail')) {$this->admin_model->updateEmail();}
+    if ($this->input->post('updateSocmed')) {$this->admin_model->updateSocmed();}
+    if ($this->input->post('updateGeneral')) {$this->admin_model->updateGeneral();}
     $data['content'] = $this->admin_model->cWebConf();
     $this->load->view('template', $data);
   }
