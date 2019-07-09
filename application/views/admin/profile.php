@@ -53,7 +53,6 @@
                 <label>Sebagai</label>
                 <input type="text" class="form-control" value="<?php echo $this->session->userdata['role']; ?>" disabled>
               </div>
-
             </div>
           </div>
           <div class="card-action">

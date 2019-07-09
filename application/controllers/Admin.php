@@ -20,6 +20,7 @@ class Admin extends CI_Controller{
 
   public function category()
   {
+    if ($this->input->post('createCategory')) {$this->admin_model->createCategory();}
     $data['content'] = $this->admin_model->cCategory();
     $this->load->view('template', $data);
   }

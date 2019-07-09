@@ -117,6 +117,11 @@ class Admin_model extends CI_Model{
     return $data;
   }
 
+  public function createCategory()
+  {
+    $this->db->insert('category', $data = array('category' => $this->input->post('category'), 'id_admin' => $this->session->userdata['id']));
+    return $this->updateData('category', 'id', $this->db->insert_id(), 'image', 'category_'.$this->db->insert_id().$this->uploadFile('category_'.$this->db->insert_id(),'jpg|png|jpeg')['ext']);
+  }
 
 }
 
