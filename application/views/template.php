@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php if (!$this->session->userdata['login']){redirect(base_url('login'));} ?>	
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />

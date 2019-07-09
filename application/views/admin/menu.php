@@ -1,30 +1,24 @@
-<li class="nav-item active">
-  <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+<li class="nav-item <?php if($content['view_name']=='dashboard'){echo 'active';} ?>">
+  <a  href="<?php echo base_url('dashboard'); ?>" >
     <i class="fas fa-home"></i>
     <p>Dashboard</p>
-    <span class="caret"></span>
   </a>
-  <div class="collapse" id="dashboard">
-    <ul class="nav nav-collapse">
-      <li>
-        <a href="<?php echo base_url('./assets/template/atlantisLite'); ?>/demo1/index.html">
-          <span class="sub-item">Dashboard 1</span>
-        </a>
-      </li>
-      <li>
-        <a href="<?php echo base_url('./assets/template/atlantisLite'); ?>/demo2/index.html">
-          <span class="sub-item">Dashboard 2</span>
-        </a>
-      </li>
-    </ul>
-  </div>
 </li>
+
+
 <li class="nav-section">
   <span class="sidebar-mini-icon">
     <i class="fa fa-ellipsis-h"></i>
   </span>
-  <h4 class="text-section">Components</h4>
+  <h4 class="text-section">Konfigurasi</h4>
 </li>
+<li class="nav-item <?php if($content['view_name']=='webConf'){echo 'active';} ?>">
+  <a  href="<?php echo base_url('webConf'); ?>" >
+    <i class="fas fa-home"></i>
+    <p>Konfigurasi Web</p>
+  </a>
+</li>
+
 <li class="nav-item">
   <a data-toggle="collapse" href="#base">
     <i class="fas fa-layer-group"></i>

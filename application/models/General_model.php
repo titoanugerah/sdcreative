@@ -7,13 +7,13 @@ class General_model extends CI_Model{
     $this->load->library('form_validation');
   }
 
+  //core
   public function getDataRow($table, $whereVar, $whereVal)
   {
     $where = array($whereVar => $whereVal );
     return $this->db->get_where($table, $where)->row();
   }
 
-  //core
   public function getAllData($table)
   {
     return $this->db->get($table)->result();
