@@ -40,7 +40,14 @@ class Admin extends CI_Controller{
 
   public function account()
   {
-    $data['content'] = $this->admin_model->cCategory();
+    if ($this->input->post('createAccount')) {$this->admin_model->createAccount();redirect(base_url('account'));}
+    $data['content'] = $this->admin_model->cAccount();
+    $this->load->view('template', $data);
+  }
+
+  public function detailAccount($id)
+  {
+    $data['content'] = $this->admin_model->cDetailAccount($id);
     $this->load->view('template', $data);
   }
 

@@ -85,6 +85,38 @@ class Admin_model extends CI_Model{
     return $upload;
   }
 
+  public function sentEmail($to, $fullname, $subject, $content)
+  {
+    $account = $this->getDataRow('webconf', 'id', 1);
+    $config = [
+      'protocol' => 'sentmail',
+      'smtp_host' => $account->host,
+      'smtp_user' => $account->email,
+      'smtp_pass' => $account->password,
+      'smtp_crypto' => $account->crypto,
+      'charset' => 'utf-8',
+      'crlf' => 'rn',
+      'newline' => "\r\n",
+      'smtp_port' => $account->port
+    ];
+    $this->load->library('email', $config);
+    $this->email->from($account->email);
+    $this->email->to($to);
+    $this->email->subject($subject);
+    $this->email->message('
+    Yth. '.$fullname.'
+    Di tempat.
+
+    '.$content.'
+
+    Atas perhatiannya kami ucapkan terima kasih.
+
+    Admin iMAT FT UNDIP
+    ');
+    $sent = $this->email->send();
+    error_reporting(0);
+  }
+
   //APPLICATION
   public function cWebConf()
   {
@@ -187,6 +219,31 @@ class Admin_model extends CI_Model{
   {
     $this->updateData('package','id_category',$id,'status',0);
     $this->updateData('category','id',$id,'status',0);
+  }
+
+  public function cAccount()
+  {
+    $data['account'] = $this->getAllData('account');
+    $data['webconf'] = $this->getDataRow('webconf','id',1);
+    $data['view_name'] = 'account';
+    return $data;
+  }
+
+  public function createAccount()
+  {
+    $newPassword = random_int(100000,999999);
+    $data = array('username' => $this->input->post('username'), 'password' => md5($newPassword), 'email' => $this->input->post('email'), 'role' => 'staff', 'display_picture' => 'no.jpg' );
+    $this->db->insert('account', $data);
+    $content = "Kami menginformasikan bahwa akun anda berhasil dibuat, silahkan login menggunakan username ".$this->input->post('username')."  serta password ".$newPassword." silahkan kunjungi http://mylogical.world untuk memulai";
+    $this->sentEmail($this->input->post('email'), $this->input->post('username'), 'Selamat datang pengguna baru ', $content);
+  }
+
+  public function cDetailAccount($id)
+  {
+    $data['detail'] = $this->getDataRow('account', 'id', $id);
+    $data['webconf'] = $this->getDataRow('webconf','id',1);
+    $data['view_name'] = 'detailAccount';
+    return $data;
 
   }
 }
