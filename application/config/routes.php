@@ -10,6 +10,7 @@ $route['logout'] = 'general/logout';
 
 //ADMIN AREA
 $route['webConf'] = 'admin/webConf';
+$route['account'] = 'admin/account';
 $route['category'] = 'admin/category';
 $route['detailCategory/(:any)'] = 'admin/detailCategory/$1';
 $route['dashboard'] = 'general/dashboard';

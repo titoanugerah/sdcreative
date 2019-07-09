@@ -12,6 +12,13 @@
   </span>
   <h4 class="text-section">Konfigurasi</h4>
 </li>
+<li class="nav-item <?php if($content['view_name']=='account'){echo 'active';} ?>">
+  <a  href="<?php echo base_url('account'); ?>" >
+    <i class="fas fa-users"></i>
+    <p>Akun</p>
+  </a>
+</li>
+
 <li class="nav-item <?php if($content['view_name']=='webConf'){echo 'active';} ?>">
   <a  href="<?php echo base_url('webConf'); ?>" >
     <i class="fas fa-broadcast-tower"></i>

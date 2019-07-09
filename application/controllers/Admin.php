@@ -38,5 +38,11 @@ class Admin extends CI_Controller{
     $this->load->view('template', $data);
   }
 
+  public function account()
+  {
+    $data['content'] = $this->admin_model->cCategory();
+    $this->load->view('template', $data);
+  }
+
 }
  ?>
