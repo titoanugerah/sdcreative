@@ -33,6 +33,7 @@ class Admin extends CI_Controller{
     else if ($this->input->post('updatePackage')) {$this->admin_model->updatePackage();}
     else if ($this->input->post('deletePackage')) {$this->admin_model->deletePackage();}
     else if ($this->input->post('restorePackage')) {$this->admin_model->restorePackage();}
+    else if ($this->input->post('deleteCategory') && md5($this->input->post('password'))==$this->session->userdata['password']) {$this->admin_model->deleteCategory($id);redirect(base_url('category'));}
     $data['content'] = $this->admin_model->cDetailCategory($id);
     $this->load->view('template', $data);
   }

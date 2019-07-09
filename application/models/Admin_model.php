@@ -137,7 +137,7 @@ class Admin_model extends CI_Model{
 
   public function cDetailCategory($id)
   {
-    $data['deleted'] = $this->getSomeDataS('package', 'id_category', $id,0); 
+    $data['deleted'] = $this->getSomeDataS('package', 'id_category', $id,0);
     $data['list'] = $this->getSomeDataS('package', 'id_category', $id,1);
     $data['detail'] = $this->getDataRow('category','id',$id);
     $data['webconf'] = $this->getDataRow('webconf','id',1);
@@ -174,8 +174,6 @@ class Admin_model extends CI_Model{
   public function deletePackage()
   {
     $id = $this->input->post('id');
-    //    $where = array('id' => $this->input->post('id'));
-    //    $this->db->delete('package',$where);
     $this->updateData('package','id',$id,'status',0);
   }
 
@@ -183,6 +181,13 @@ class Admin_model extends CI_Model{
   {
     $id = $this->input->post('id');
     $this->updateData('package','id',$id,'status',1);
+  }
+
+  public function deleteCategory($id)
+  {
+    $this->updateData('package','id_category',$id,'status',0);
+    $this->updateData('category','id',$id,'status',0);
+
   }
 }
 

@@ -55,7 +55,7 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info"  name="updateCategory" value="updateCategory">Update Data</button>
                   <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Ganti Gambar</button>
-
+                  <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal3">Hapus Kategori</button>
                 </div>
               </form>
 
@@ -247,6 +247,37 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" name="restorePackage" value="restorePackage">Pulihkan</button>
+        <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+<div class="modal fade" id="myModal3" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <center>
+          <h4> Hapus Kategori</h4>
+        </center>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <form  method="post">
+        <div class="modal-body">
+          <div class="row">
+
+
+          <div class="form-group col-6 col-md-12">
+            <label>Password anda</label>
+            <input type="password" name="password" value="" placeholder="Tulis Password anda" class="form-control">
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" name="deleteCategory" value="deleteCategory">Hapus Kategori</button>
         <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
       </div>
     </form>
