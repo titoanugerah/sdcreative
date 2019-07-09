@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'general';
 $route['login'] = 'general/login';
+$route['profile'] = 'general/profile';
 $route['logout'] = 'general/logout';
 
 $route['dashboard'] = 'general/dashboard';

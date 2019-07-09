@@ -123,24 +123,14 @@
 					<nav class="pull-left">
 						<ul class="nav">
 							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
+								<a class="nav-link" href="<?php echo base_url(''); ?>">
+									Halaman Awal
 								</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
+								</ul>
 					</nav>
 					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+						<?php echo date('Y'); ?>, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://mylogical.world">Tito Anugerah</a>
 					</div>
 				</div>
 			</footer>
@@ -191,6 +181,6 @@
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/setting-demo.js"></script>
 	<script src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/js/demo.js"></script>
-	
+
 </body>
 </html>

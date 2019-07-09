@@ -122,6 +122,13 @@ class General_model extends CI_Model{
     return $data;
   }
 
+  public function cProfile()
+  {
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    $data['view_name'] = 'profile';
+    return $data;
+  }
+
 }
 
  ?>

@@ -35,6 +35,12 @@ class General extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 
+	public function profile()
+	{
+		$data['content'] = $this->general_model->cProfile();
+		$this->load->view('template', $data);
+	}
+
 	public function logout()
 	{
 		$this->session->sess_destroy();
