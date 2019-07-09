@@ -191,6 +191,7 @@ class Admin_model extends CI_Model{
   public function createPackage($id)
   {
     $data = array('package' => $this->input->post('package'), 'price' => $this->input->post('price'), 'description' => $this->input->post('description'),'pic_count' => $this->input->post('pic_count'),'id_admin' => $this->session->userdata['id'],'id_category' => $id);
+    $this->updateData('package', 'id', $this->db->insert_id(), 'image', 'package_'.$this->db->insert_id().$this->uploadFile('package_'.$this->db->insert_id(),'jpg|png|jpeg')['ext']);
     return $this->db->insert('package', $data);
   }
 
@@ -244,7 +245,12 @@ class Admin_model extends CI_Model{
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'detailAccount';
     return $data;
+  }
 
+  public function updateImagePackage()
+  {
+    $id = $this->input->post('id');
+    return $this->updateData('package', 'id', $id, 'image', 'package_'.$id.$this->uploadFile('package_'.$id,'jpg|png|jpeg')['ext']);
   }
 }
 

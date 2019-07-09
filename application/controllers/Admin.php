@@ -31,6 +31,7 @@ class Admin extends CI_Controller{
     else if ($this->input->post('updateCategory')) {$this->admin_model->updateCategory($id);}
     else if ($this->input->post('createPackage')) {$this->admin_model->createPackage($id);}
     else if ($this->input->post('updatePackage')) {$this->admin_model->updatePackage();}
+    else if ($this->input->post('uploadImage')) {$this->admin_model->updateImagePackage();}
     else if ($this->input->post('deletePackage')) {$this->admin_model->deletePackage();}
     else if ($this->input->post('restorePackage')) {$this->admin_model->restorePackage();}
     else if ($this->input->post('deleteCategory') && md5($this->input->post('password'))==$this->session->userdata['password']) {$this->admin_model->deleteCategory($id);redirect(base_url('category'));}

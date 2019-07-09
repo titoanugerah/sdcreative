@@ -61,44 +61,24 @@
 
             </div>
             <div class="tab-pane fade" id="pills-profile-icon" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
-                  <div class="bd-example">
-                    <div class="table-responsive">
-                      <table id="multi-filter-select" class="display table table-striped table-hover" cellspacing="0" width="100%">
-                        <thead>
-                          <tr>
-                            <th>No</th>
-                            <th>Nama Paket</th>
-                            <th>Harga</th>
-                            <th>Jumlah PIC</th>
-                            <th>Opsi</th>
-                          </tr>
-                        </thead>
-                        <tfoot>
-                          <tr>
-                            <th>No</th>
-                            <th>Nama Paket</th>
-                            <th>Harga</th>
-                            <th>Jumlah PIC</th>
-                            <th>Opsi</th>
-                          </tr>
-                        </tfoot>
-                        <tbody>
-                          <?php $i=1;foreach ($content['list'] as $item): ?>
-                          <tr>
-                            <td><?php echo $i; ?></td>
-                            <td><?php echo $item->package ?></td>
-                            <td><?php echo $item->price ?></td>
-                            <td><?php echo $item->pic_count; ?></td>
-                            <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id;?>">Detail</button> </td>
-                          </tr>
-                        <?php endforeach; ?>
-                        </tbody>
-                      </table>
+              <div class="row">
+
+              <?php foreach ($content['list'] as $item):?>
+
+                <div class="col-md-4">
+
+                  <div class="card" >
+                    <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->image); ?>" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo $item->package; ?></h5>
+                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
                     </div>
                   </div>
-
-
+                </div>
+              <?php endforeach; ?>
             </div>
+                        </div>
+
 
 
           </div>
@@ -145,7 +125,7 @@
         </center>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
-      <form  method="post">
+      <form  method="post" enctype="multipart/form-data">
         <div class="modal-body">
           <div class="row">
 
@@ -153,6 +133,11 @@
             <label>Nama Paket</label>
             <input type="text" class="form-control" placeholder="Masukan nama paket" name="package">
           </div>
+          <div class="form-group col-6 col-md-12">
+            <br>
+          </center>
+          <input type="file" name="fileUpload" class="btn btn-primary">
+        </div>
           <div class="form-group col-6 col-md-6">
             <label>Harga</label>
             <input type="number" class="form-control" placeholder="Masukan harga paket" name="price">
@@ -188,7 +173,7 @@
           </center>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <form  method="post">
+        <form  method="post" enctype="multipart/form-data">
           <div class="modal-body">
             <div class="row">
 
@@ -197,6 +182,12 @@
             <input type="text" class="form-control"  name="id" value="<?php echo $item->id; ?>" hidden>
             <input type="text" class="form-control" placeholder="Masukan nama paket" name="package" value="<?php echo $item->package; ?>">
           </div>
+          <div class="form-group col-6 col-md-12">
+            <br>
+          </center>
+          <input type="file" name="fileUpload" class="btn btn-primary">
+        </div>
+
             <div class="form-group col-6 col-md-6">
               <label>Harga</label>
               <input type="number" class="form-control" placeholder="Masukan harga paket" name="price" value="<?php echo $item->price; ?>">
@@ -214,7 +205,8 @@
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary" name="updatePackage" value="updatePackage">Update Paket</button>
-          <button type="submit" class="btn btn-danger" name="deletePackage" value="deletePackage">Hapus Paket</button>
+          <button type="submit" class="btn btn-primary" name="uploadImage" value="uploadImage">Ganti Foto</button>
+          <button type="submit" class="btn btn-danger" name="deletePackage" value="deletePackage">Hapus</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>
