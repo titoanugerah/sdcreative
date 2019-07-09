@@ -5,7 +5,7 @@
         <h2 class="text-white pb-2 fw-bold">Kategori</h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
-        <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal">Tambah Kategori</button>
+        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal">Tambah Kategori</button>
 
       </div>
     </div>

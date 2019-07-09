@@ -11,9 +11,9 @@ class Admin extends CI_Controller{
   public function webConf()
   {
     if ($this->input->post('upload')) {$this->admin_model->uploadLogo();}
-    if ($this->input->post('updateEmail')) {$this->admin_model->updateEmail();}
-    if ($this->input->post('updateSocmed')) {$this->admin_model->updateSocmed();}
-    if ($this->input->post('updateGeneral')) {$this->admin_model->updateGeneral();}
+    else if ($this->input->post('updateEmail')) {$this->admin_model->updateEmail();}
+    else if ($this->input->post('updateSocmed')) {$this->admin_model->updateSocmed();}
+    else if ($this->input->post('updateGeneral')) {$this->admin_model->updateGeneral();}
     $data['content'] = $this->admin_model->cWebConf();
     $this->load->view('template', $data);
   }
@@ -27,6 +27,8 @@ class Admin extends CI_Controller{
 
   public function detailCategory($id)
   {
+    if ($this->input->post('updateImage')) {$this->admin_model->updateImageCategory($id);}
+    else if ($this->input->post('updateCategory')) {$this->admin_model->updateCategory($id);}
     $data['content'] = $this->admin_model->cDetailCategory($id);
     $this->load->view('template', $data);
   }

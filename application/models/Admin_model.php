@@ -12,6 +12,12 @@ class Admin_model extends CI_Model{
     return $this->db->get_where($table, $where)->row();
   }
 
+  public function getSomeData($table, $whereVar, $whereVal)
+  {
+    $where = array($whereVar => $whereVal );
+    return $this->db->get_where($table, $where)->result();
+  }
+
   public function getAllData($table)
   {
     return $this->db->get($table)->result();
@@ -125,13 +131,23 @@ class Admin_model extends CI_Model{
 
   public function cDetailCategory($id)
   {
+    $data['list'] = $this->getSomeData('package', 'id_category', $id);
     $data['detail'] = $this->getDataRow('category','id',$id);
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'detailCategory';
     return $data;
   }
 
+  public function updateImageCategory($id)
+  {
+    return $this->updateData('category', 'id', $id, 'image', 'category_'.$id.$this->uploadFile('category_'.$id,'jpg|png|jpeg')['ext']);
+  }
 
+  public function updateCategory($id)
+  {
+    $this->updateData('category','id',$id,'category',$this->input->post('category'));
+    $this->updateData('category','id',$id,'info',$this->input->post('info'));
+  }
 }
 
  ?>
