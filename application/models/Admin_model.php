@@ -63,9 +63,7 @@ class Admin_model extends CI_Model{
   {
     $where = array($var => $val);
     return $this->db->delete($table, $where);
-
   }
-
 
   public function uploadFile($filename,$allowedFile)
   {
@@ -111,7 +109,7 @@ class Admin_model extends CI_Model{
 
     Atas perhatiannya kami ucapkan terima kasih.
 
-    Admin iMAT FT UNDIP
+    Admin
     ');
     $sent = $this->email->send();
     error_reporting(0);
@@ -191,8 +189,8 @@ class Admin_model extends CI_Model{
   public function createPackage($id)
   {
     $data = array('package' => $this->input->post('package'), 'price' => $this->input->post('price'), 'description' => $this->input->post('description'),'pic_count' => $this->input->post('pic_count'),'id_admin' => $this->session->userdata['id'],'id_category' => $id);
-    $this->updateData('package', 'id', $this->db->insert_id(), 'image', 'package_'.$this->db->insert_id().$this->uploadFile('package_'.$this->db->insert_id(),'jpg|png|jpeg')['ext']);
-    return $this->db->insert('package', $data);
+    $this->db->insert('package', $data);
+    return $this->updateData('package', 'id', $this->db->insert_id(), 'image', 'package_'.$this->db->insert_id().$this->uploadFile('package_'.$this->db->insert_id(),'jpg|png|jpeg')['ext']);
   }
 
   public function updatePackage()
@@ -222,9 +220,10 @@ class Admin_model extends CI_Model{
     $this->updateData('category','id',$id,'status',0);
   }
 
-  public function cAccount()
+  public function cAccount($keyword)
   {
-    $data['account'] = $this->getAllData('account');
+    if ($keyword==null) {$data['account'] = $this->getAllData('account');}
+    else{$data['account'] = $this->db->query('select * from account where id  LIKE "%'.$keyword.'%" or username LIKE "%'.$keyword.'%" or fullname LIKE "%'.$keyword.'%"')->result();}
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'account';
     return $data;

@@ -14,9 +14,7 @@
 <div class="page-inner mt--5">
   <div class="row">
     <?php foreach ($content['category'] as $item): ?>
-
       <div class="col-md-4">
-
         <div class="card" >
           <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->image); ?>" alt="Card image cap">
           <div class="card-body">

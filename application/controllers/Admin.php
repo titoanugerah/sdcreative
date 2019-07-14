@@ -41,8 +41,10 @@ class Admin extends CI_Controller{
 
   public function account()
   {
+    $keyword = null;
+    if ($this->input->post('find')) {$keyword = $this->input->post('keyword');}
     if ($this->input->post('createAccount')) {$this->admin_model->createAccount();redirect(base_url('account'));}
-    $data['content'] = $this->admin_model->cAccount();
+    $data['content'] = $this->admin_model->cAccount($keyword);
     $this->load->view('template', $data);
   }
 

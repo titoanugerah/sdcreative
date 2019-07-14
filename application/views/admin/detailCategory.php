@@ -1,12 +1,12 @@
-<div class="panel-header bg-primary-gradient">
-  <div class="page-inner py-5">
+<div class="panel-header" style="background-image: url(<?php echo base_url('./assets/upload/'.$content['detail']->image); ?>);background-position: center;background-size: cover;height: 250px">
+  <div class="page-inner py-10">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
         <h2 class="text-white pb-2 fw-bold">Detail Kategori <?php echo $content['detail']->category; ?></h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
-        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal1">Tambah Paket</button>&nbsp;
-        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal2">Pulihkan Paket Terhapus</button>
+        <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal1"><b>Tambah Paket</b></button>&nbsp;
+        <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal2"><b>Pulihkan Paket Terhapus</b></button>
 
       </div>
     </div>
@@ -48,14 +48,13 @@
                       <label>Keterangan</label>
                       <input type="text" class="form-control" placeholder="Masukan keterangan kategori" name="info" value="<?php echo $content['detail']->info; ?>">
                     </div>
-
-
                   </div>
                 </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info"  name="updateCategory" value="updateCategory">Update Data</button>
                   <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Ganti Gambar</button>
                   <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal3">Hapus Kategori</button>
+                  <a href="<?php echo base_url('category'); ?>" class="btn btn-secondary">Kembali</a>
                 </div>
               </form>
 
@@ -63,23 +62,23 @@
             <div class="tab-pane fade" id="pills-profile-icon" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
               <div class="row">
 
-              <?php foreach ($content['list'] as $item):?>
+                <?php foreach ($content['list'] as $item):?>
 
-                <div class="col-md-4">
+                  <div class="col-md-4">
 
-                  <div class="card" >
-                    <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->image); ?>" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo $item->package; ?></h5>
-                      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
+                    <div class="card" >
+                      <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->image); ?>" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo $item->package; ?></h5>
+                        <p><?php echo $item->description; ?></p>
+                        <h5 style="color:green;"><b><?php echo 'Rp. '.$item->price; ?></b></h5>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              <?php endforeach; ?>
+                <?php endforeach; ?>
+              </div>
             </div>
-                        </div>
-
-
 
           </div>
         </div>
@@ -103,16 +102,16 @@
           <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['detail']->image); ?>" alt="Card image cap">
           <div class="form-group  col-6 col-md-12">
             <br>
-          <input type="file" name="fileUpload" class="btn btn-primary">
+            <input type="file" name="fileUpload" class="btn btn-primary">
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="updateImage" value="updateImage">Update Gambar</button>
-        <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
-      </div>
-    </form>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" name="updateImage" value="updateImage">Update Gambar</button>
+          <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </div>
 
 <div class="modal fade" id="myModal1" role="dialog">
@@ -129,15 +128,15 @@
         <div class="modal-body">
           <div class="row">
 
-          <div class="form-group col-6 col-md-12">
-            <label>Nama Paket</label>
-            <input type="text" class="form-control" placeholder="Masukan nama paket" name="package">
+            <div class="form-group col-6 col-md-12">
+              <label>Nama Paket</label>
+              <input type="text" class="form-control" placeholder="Masukan nama paket" name="package">
+            </div>
+            <div class="form-group col-6 col-md-12">
+              <br>
+            </center>
+            <input type="file" name="fileUpload" class="btn btn-primary">
           </div>
-          <div class="form-group col-6 col-md-12">
-            <br>
-          </center>
-          <input type="file" name="fileUpload" class="btn btn-primary">
-        </div>
           <div class="form-group col-6 col-md-6">
             <label>Harga</label>
             <input type="number" class="form-control" placeholder="Masukan harga paket" name="price">
@@ -177,16 +176,16 @@
           <div class="modal-body">
             <div class="row">
 
-            <div class="form-group col-6 col-md-12">
-              <label>Nama Paket</label>
-            <input type="text" class="form-control"  name="id" value="<?php echo $item->id; ?>" hidden>
-            <input type="text" class="form-control" placeholder="Masukan nama paket" name="package" value="<?php echo $item->package; ?>">
-          </div>
-          <div class="form-group col-6 col-md-12">
-            <br>
-          </center>
-          <input type="file" name="fileUpload" class="btn btn-primary">
-        </div>
+              <div class="form-group col-6 col-md-12">
+                <label>Nama Paket</label>
+                <input type="text" class="form-control"  name="id" value="<?php echo $item->id; ?>" hidden>
+                <input type="text" class="form-control" placeholder="Masukan nama paket" name="package" value="<?php echo $item->package; ?>">
+              </div>
+              <div class="form-group col-6 col-md-12">
+                <br>
+              </center>
+              <input type="file" name="fileUpload" class="btn btn-primary">
+            </div>
 
             <div class="form-group col-6 col-md-6">
               <label>Harga</label>
@@ -212,7 +211,7 @@
       </form>
     </div>
   </div>
-  </div>
+</div>
 <?php endforeach; ?>
 
 <div class="modal fade" id="myModal2" role="dialog">
@@ -236,14 +235,14 @@
             </select>
           </div>
 
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="restorePackage" value="restorePackage">Pulihkan</button>
-        <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
-      </div>
-    </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" name="restorePackage" value="restorePackage">Pulihkan</button>
+          <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </div>
 
 <div class="modal fade" id="myModal3" role="dialog">
@@ -261,18 +260,18 @@
           <div class="row">
 
 
-          <div class="form-group col-6 col-md-12">
-            <label>Password anda</label>
-            <input type="password" name="password" value="" placeholder="Tulis Password anda" class="form-control">
+            <div class="form-group col-6 col-md-12">
+              <label>Password anda</label>
+              <input type="password" name="password" value="" placeholder="Tulis Password anda" class="form-control">
+            </div>
           </div>
-        </div>
 
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="deleteCategory" value="deleteCategory">Hapus Kategori</button>
-        <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
-      </div>
-    </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" name="deleteCategory" value="deleteCategory">Hapus Kategori</button>
+          <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 </div>

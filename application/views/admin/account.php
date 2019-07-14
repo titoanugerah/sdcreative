@@ -5,9 +5,11 @@
         <h2 class="text-white pb-2 fw-bold">Konfigurasi Akun</h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
+        <div class="row">
+
         <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal">Tambah Staff</button>
       </div>
-
+      </div>
     </div>
   </div>
 </div>
@@ -32,11 +34,22 @@
           </ul>
           <div class="tab-content mt-2 mb-3" id="pills-with-icon-tabContent">
             <div class="tab-pane fade show active" id="pills-home-icon" role="tabpanel" aria-labelledby="pills-home-tab-icon">
+              <form  method="post">
+              <div class="input-group col-md-12">
+                <input type="text" placeholder="Cari Akun Staf..." class="form-control btn-primary btn-border" name="keyword">
+                <div class="input-group-prepend">
+                  <button type="submit" class="btn btn-search btn-primary" name="find" value="find">
+                    <i class="fa fa-search search-icon"></i>&nbsp;Cari Akun
+                  </button>
+                </div>
+              </div>
+            </form>
+
+
+              <br><br>
               <div class="row">
                 <?php foreach ($content['account'] as $item): if($item->role!='staff'){continue;} ?>
-
                   <div class="col-md-4">
-
                     <div class="card" >
                       <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->display_picture); ?>" alt="Card image cap">
                       <div class="card-body">
