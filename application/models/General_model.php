@@ -93,8 +93,6 @@ class General_model extends CI_Model{
     return $data;
   }
 
-
-
   //APPLICATION
   public function cHome()
   {
@@ -133,11 +131,11 @@ class General_model extends CI_Model{
   {
     $where = array('id' => $this->session->userdata['id']);
     if ($this->input->post('password')=='') {
-      $data = array('username' => $this->input->post('username'), 'password' => md5($this->input->post('username')), 'fullname' => $this->input->post('fullname'), 'phone_number' => $this->input->post('phone_number'));
+      $data = array('username' => $this->input->post('username'), 'fullname' => $this->input->post('fullname'), 'phone_number' => $this->input->post('phone_number'));
       $this->db->where($where);
       $data['status'] = $this->db->update('account', $data);
     } else {
-      $data = array('username' => $this->input->post('username'), 'fullname' => $this->input->post('fullname'), 'phone_number' => $this->input->post('phone_number'));
+      $data = array('username' => $this->input->post('username'), 'password' => md5($this->input->post('username')), 'fullname' => $this->input->post('fullname'), 'phone_number' => $this->input->post('phone_number'));
       $this->db->where($where);
       $data['status'] = $this->db->update('account', $data);
     }
