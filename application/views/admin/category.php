@@ -1,11 +1,11 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header" style="background-image: url(<?php echo base_url('./assets/upload/bg_category.png'); ?>);background-position: center;background-size: cover;height: 250px">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
         <h2 class="text-white pb-2 fw-bold">Kategori</h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
-        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal">Tambah Kategori</button>
+        <button type="button" class="btn btn-info  btn-round" data-toggle="modal" data-target="#myModal">Tambah Kategori</button>
 
       </div>
     </div>

@@ -36,14 +36,24 @@
 <li class="nav-item">
   <a data-toggle="collapse" href="#base">
     <i class="fas fa-layer-group"></i>
-    <p>Base</p>
+    <p>Order</p>
     <span class="caret"></span>
   </a>
   <div class="collapse" id="base">
     <ul class="nav nav-collapse">
       <li>
-        <a href="components/avatars.html">
-          <span class="sub-item">Avatars</span>
+        <a href="<?php echo base_url('incomingOrder') ?>">
+          <span class="sub-item active">Pesanan Masuk</span>
+        </a>
+      </li>
+      <li>
+        <a href="<?php echo base_url('processOrder') ?>">
+          <span class="sub-item active">Pesanan Diproses</span>
+        </a>
+      </li>
+      <li>
+        <a href="<?php echo base_url('finishedOrder') ?>">
+          <span class="sub-item active">Pesanan Selesai</span>
         </a>
       </li>
 
