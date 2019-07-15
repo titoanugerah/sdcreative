@@ -20,7 +20,7 @@ class Admin extends CI_Controller{
 
   public function category()
   {
-    if ($this->input->post('createCategory')) {$this->admin_model->createCategory();}
+    if ($this->input->post('createCategory')) {$this->admin_model->createCategory();redirect(base_url('category'));}
     $data['content'] = $this->admin_model->cCategory();
     $this->load->view('template', $data);
   }
@@ -29,7 +29,7 @@ class Admin extends CI_Controller{
   {
     if ($this->input->post('updateImage')) {$this->admin_model->updateImageCategory($id);}
     else if ($this->input->post('updateCategory')) {$this->admin_model->updateCategory($id);}
-    else if ($this->input->post('createPackage')) {$this->admin_model->createPackage($id);}
+    else if ($this->input->post('createPackage')) {$this->admin_model->createPackage($id);redirect(base_url('detailCategory/'.$id));}
     else if ($this->input->post('updatePackage')) {$this->admin_model->updatePackage();}
     else if ($this->input->post('uploadImage')) {$this->admin_model->updateImagePackage();}
     else if ($this->input->post('deletePackage')) {$this->admin_model->deletePackage();}
