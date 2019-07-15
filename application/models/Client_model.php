@@ -128,12 +128,22 @@ class Client_model extends CI_Model
     return $data;
   }
 
-  public function cCreateOrder($id)
+  public function createOrder($id)
   {
-    $data['view_name'] = 'createOrder';
+    $this->db->insert('order',$data = array('id_customer' => $this->session->userdata['id'], 'status' => 1 ));
+    $id_order = $this->db->insert_id();
+    $this->db->insert('detail_order', $data = array('id_order' => $id_order, 'id_package' => $id ));
+    return $id_order;
+  }
+
+  public function cPlaceOrder($id)
+  {
+    $data['order'] = $this->getDataRow('order','id',$id);
+    $data['detailOrder'] = $this->getSomeData('view_detail_order','id_order', $id); 
+    $data['view_name'] = 'placeOrder';
+    $data['package'] = $this->getAllData('package');
     $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
     return $data;
-
   }
 }
 

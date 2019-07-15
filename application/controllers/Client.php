@@ -18,9 +18,15 @@ class Client extends CI_Controller
 
   public function createOrder($id)
   {
-    $data['content'] = $this->client_model->cCreateOrder($id);
+    redirect(base_url('placeOrder/'.$this->client_model->createOrder($id)));
+  }
+
+  public function placeOrder($id)
+  {
+    $data['content'] = $this->client_model->cPlaceOrder($id);
     $this->load->view('template',$data);
   }
+
 }
 
 
