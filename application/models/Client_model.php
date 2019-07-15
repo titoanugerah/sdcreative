@@ -127,6 +127,14 @@ class Client_model extends CI_Model
     $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
     return $data;
   }
+
+  public function cCreateOrder($id)
+  {
+    $data['view_name'] = 'createOrder';
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    return $data;
+
+  }
 }
 
  ?>

@@ -20,3 +20,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 //CLIENT AREA
 $route['newOrder'] = 'client/newOrder';
+$route['createOrder/(:any)'] = 'client/createOrder/$1';

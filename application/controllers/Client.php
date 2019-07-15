@@ -15,7 +15,14 @@ class Client extends CI_Controller
     $data['content'] = $this->client_model->cNewOrder();
     $this->load->view('template',$data);
   }
+
+  public function createOrder($id)
+  {
+    $data['content'] = $this->client_model->cCreateOrder($id);
+    $this->load->view('template',$data);
+  }
 }
+
 
 
  ?>
