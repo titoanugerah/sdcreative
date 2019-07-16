@@ -192,6 +192,7 @@
                             </div>
                           </div>
                         </li>
+
                         <li <?php if($content['order']->status<=3){echo 'hidden';} ?>>
                           <div class="timeline-badge"><i class="flaticon-message"></i></div>
                           <div class="timeline-panel">
@@ -217,18 +218,126 @@
                           </div>
                         </li>
 
-
-                        <li class="timeline-inverted">
-                          <div class="timeline-badge success"><i class="flaticon-credit-card-1"></i></div>
+                        <li class="timeline-inverted" <?php if($content['order']->status<=5){echo 'hidden';} ?>>
                           <div class="timeline-panel">
                             <div class="timeline-heading">
-                              <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                              <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
                             </div>
                             <div class="timeline-body">
-                              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                              <p><?php echo $content['order']->admin ?> selaku admin memilih petugas untuk project ini antara lain </p>
+                              <div class="row">
+
+                              <?php for($i=1; $i<=$content['order']->pic_count; $i++){ ?>
+                                <div class="col-md-4">
+                                  <div class="card" >
+                                    <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic.$i); ?>" alt="Card image cap">
+                                    <div class="card-body">
+                                      <h5 class="card-title"><?php echo $content['order']->fullname_pic.$i; ?></h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              <?php } ?>
+                              </div>
                             </div>
                           </div>
                         </li>
+
+                        <li class="timeline-inverted" <?php if($content['order']->status<=6){echo 'hidden';} ?>>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                              <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_event; ?></small></p>
+                            </div>
+                            <div class="timeline-body">
+                              <p>Melakukan eksekusi lapangan pada tempat yang ditentukan (<?php echo $content['order']->address_event; ?>)</p>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="timeline-inverted" <?php if($content['order']->status<=7){echo 'hidden';} ?>>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                            </div>
+                            <div class="timeline-body">
+                              <p>Mengirimkan hasil pengambilan gambar yang diunggah pada link (<?php echo $content['order']->link_1; ?>)</p>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li <?php if($content['order']->status<=8){echo 'hidden';} ?>>
+                          <div class="timeline-badge"><i class="flaticon-message"></i></div>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php echo $content['order']->fullname; ?></h4>
+                              <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_payment_full; ?></small></p>
+                            </div>
+                            <div class="timeline-body">
+                              <p><?php echo $content['order']->fullname.' memilih foto yang akan diedit'; ?></p>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li <?php if($content['order']->status<=9){echo 'hidden';} ?>>
+                          <div class="timeline-badge"><i class="flaticon-message"></i></div>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php echo $content['order']->fullname; ?></h4>
+                              <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_payment_full; ?></small></p>
+                            </div>
+                            <div class="timeline-body">
+                              <p><?php echo $content['order']->fullname.' berhasil melakukan pembayaran penuh dengan jumlah Rp. '.$content['order']->payment_amount_1; ?></p>
+                              <img src="<?php echo base_url('./assets/upload/'.$content['order']->payment_2); ?>" alt="">
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="timeline-inverted" <?php if($content['order']->status<=10){echo 'hidden';} ?>>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                            </div>
+                            <div class="timeline-body">
+                              <p>Berhasil melakukan verifikasi pembayaran <?php echo $content['order']->fullname ?></p>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="timeline-inverted" <?php if($content['order']->status<=11){echo 'hidden';} ?>>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                            </div>
+                            <div class="timeline-body">
+                              <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_1; ?>)</p>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="timeline-inverted" <?php if($content['order']->status<=12){echo 'hidden';} ?>>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                            </div>
+                            <div class="timeline-body">
+                              <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_2; ?>)</p>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li class="timeline-inverted" <?php if($content['order']->status<=10){echo 'hidden';} ?>>
+                          <div class="timeline-panel">
+                            <div class="timeline-heading">
+                              <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                            </div>
+                            <div class="timeline-body">
+                              <p>Berhasil mengirimkan hasil hardfile gambar ke lokasi yang ditentukan ( <?php echo $content['order']->address_sent; ?>) dengan nomor resi </p>
+                            </div>
+                          </div>
+                        </li>
+
+
+
                       </ul>
                     </div>
                   </div>
