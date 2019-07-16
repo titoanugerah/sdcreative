@@ -6,7 +6,7 @@ class Client_model extends CI_Model
 
   function __construct()
   {
-
+//    error_reporting(0);
   }
   //CORE
   public function getDataRow($table, $whereVar, $whereVal)
@@ -161,17 +161,40 @@ class Client_model extends CI_Model
 
   public function addPromo($id)
   {
-    if ($this->getDataRow('view_promo', 'promo_code', $this->input->post('promo'))->available>0) {
-      $this->updateData('order', 'id', $id, 'promo', $this->input->post('promo'));
-      $this->updateData('order', 'id', $id, 'date_event', $this->input->post('date_event'));
+//    $this->updateData('order',)
+    $this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'Y-m-d'));
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_event'));
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_sent'));
+    $this->updateData('order', 'id', $id, 'need_hardfile', $this->input->post('need_hardfile'));
+    if ($this->getNumRows('view_promo','promo_code', $this->input->post('promo'))>0) {
+      if ($this->getDataRow('view_promo', 'promo_code', $this->input->post('promo'))->available>0) {
+        $this->updateData('order', 'id', $id, 'promo', $this->input->post('promo'));
+      }
     }
   }
 
   public function deletePromo($id)
   {
-
-    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('date_event'));
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_event'));
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_sent'));
+    $this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'Y-m-d'));
+    $this->updateData('order', 'id', $id, 'need_hardfile', $this->input->post('need_hardfile'));
     return $this->updateData('order', 'id', $id, 'promo', null);
+  }
+
+  public function cancelOrder($id)
+  {
+    $this->deleteData('order', 'id', $id);
+    $this->deleteData('detail_order', 'id_order', $id);
+  }
+
+  public function placeOrder($id)
+  {
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_event'));
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_sent'));
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('date_event'));
+    $this->updateData('order', 'id', $id, 'need_hardfile', $this->input->post('need_hardfile'));
+    $this->updateData('order', 'id', $id, 'status', 2);
   }
 }
  ?>

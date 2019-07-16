@@ -49,4 +49,10 @@ class General extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect(base_url(''));
 	}
+
+	public function detailOrder($id)
+	{
+		$data['content'] = $this->general_model->cDetailOrder($id);
+		$this->load->view('template', $data);
+	}
 }

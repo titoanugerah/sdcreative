@@ -148,6 +148,16 @@ class General_model extends CI_Model{
     if($this->updateData('account','id', $this->session->userdata['id'],'display_picture','display_picture_'.$this->session->userdata['id'].$this->uploadFile('display_picture_'.$this->session->userdata['id'], 'jpg|jpeg|png')['ext'])){$data=$this->setSession($this->session->userdata['id']);}
     return $data;
   }
+
+  public function cDetailOrder($id)
+  {
+    $data['detailOrder'] = $this->getSomeData('view_detail_order','id_order',$id);
+    $data['order'] = $this->getDataRow('view_order', 'id', $id);
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    $data['view_name'] = 'detailOrder';
+    return $data;
+  }
+
 }
 
  ?>

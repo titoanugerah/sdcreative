@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <div class="card-title">Identitas Pelanggan</div>
+          <div class="card-title">Ringkasan Pemesanan</div>
         </div>
         <form  method="post">
           <div class="card-body">
@@ -40,30 +40,34 @@
                     <input type="radio" name="need_hardfile" value="1" class="selectgroup-input" <?php if($content['order']->need_hardfile==1){echo 'checked';} ?>>
                     <span class="selectgroup-button">Softfile dan Hardfile</span>
                   </label>
-
                 </div>
               </div>
+
               <div class="form-group col-6 ">
                 <label>Tanggal Pelaksanaan</label>
                 <input type="date" class="form-control" name="date_event"  value="<?php echo $content['order']->date_event; ?>" required>
               </div>
+
               <div class="form-group col-2 ">
                 <label>Total Layanan</label>
                 <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->total; ?>" readonly>
               </div>
+
               &nbsp;&nbsp;
-                &nbsp;&nbsp;
+              &nbsp;&nbsp;
+
               <div class="form-group col-4 ">
                 <div class="row">
-
-                <label>Kode Promo</label>
-                <input type="text" class="form-control col-10" name="promo" value="<?php echo $content['order']->promo; ?>" placeholder="masukan kode promo">
-                <button type="submit" name="addPromo" value="addPromo" class="btn col-2 btn-success" <?php if($content['order']->promo!=null){echo 'hidden';} ?>>+</button>
-                <button type="submit" name="deletePromo" value="deletePromo" class="btn col-2 btn-danger" <?php if($content['order']->promo==null){echo 'hidden';} ?>>x</button>
+                  <label>Kode Promo</label>
+                  <input type="text" class="form-control col-10" name="promo" value="<?php echo $content['order']->promo; ?>" placeholder="masukan kode promo">
+                  <button type="submit" name="addPromo" value="addPromo" class="btn col-2 btn-success" <?php if($content['order']->promo!=null){echo 'hidden';} ?>>+</button>
+                  <button type="submit" name="deletePromo" value="deletePromo" class="btn col-2 btn-danger" <?php if($content['order']->promo==null){echo 'hidden';} ?>>x</button>
+                </div>
               </div>
-            </div>
+
               &nbsp;&nbsp;
-                &nbsp;&nbsp;
+              &nbsp;&nbsp;
+
               <div class="form-group col-2 ">
                 <label>Diskon</label>
                 <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->discount; ?>" readonly>
@@ -73,9 +77,23 @@
                 <label>Sub Total</label>
                 <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->subtotal; ?>" readonly>
               </div>
-
+            </div>
+            <div class="row">
+            <div class="form-group col-6">
+              <label>Alamat Event </label>
+              <textarea class="form-control" name="address_event" rows="2" placeholder="masukan alamat event anda disini" required><?php echo $content['order']->address_event; ?></textarea>
             </div>
 
+            <div class="form-group col-6">
+              <label>Alamat dikirim </label>
+              <textarea class="form-control" name="address_sent" rows="2" placeholder="masukan alamat pengiriman cetakan foto"><?php echo $content['order']->address_sent; ?></textarea>
+            </div>
+          </div>
+
+          </div>
+          <div class="card-footer">
+            <button type="submit" name="placeOrder" value="placeOrder" class="btn btn-success">Selesaikan Pemesanan</button>
+            <button type="submit" name="cancelOrder" value="cancelOrder" class="btn btn-warning">Batalkan Pemesanan</button>
           </div>
         </form>
       </div>
@@ -130,16 +148,15 @@
           <div class="card-body">
             <div class="bd-example">
               <div class="table-responsive">
-                <table id="multi-filter-select" class="display table table-striped table-hover" cellspacing="0" width="100%">
+                <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>No</th>
-                      <th>Nama Layanan</th>
-                      <th>Harga</th>
-                      <th>Opsi</th>
+                      <th scope="col">No</th>
+                      <th scope="col">Nama Layanan</th>
+                      <th scope="col">Harga</th>
+                      <th scope="col">Opsi</th>
                     </tr>
                   </thead>
-
                   <tbody>
                     <?php $i=1;foreach ($content['detailOrder'] as $item): ?>
 
@@ -152,6 +169,7 @@
                       <?php $i++;endforeach; ?>
                     </tbody>
                   </table>
+
                 </div>
               </div>
             </div>

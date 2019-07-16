@@ -25,6 +25,8 @@ class Client extends CI_Controller
     if ($this->input->post('addOrder')) {$this->client_model->addOrder($id);}
     elseif ($this->input->post('addPromo')) {$this->client_model->addPromo($id);}
     elseif ($this->input->post('deletePromo')) {$this->client_model->deletePromo($id);}
+    elseif ($this->input->post('cancelOrder')) {$this->client_model->cancelOrder($id); redirect(base_url('newOrder'));}
+    elseif ($this->input->post('placeOrder')) {$this->client_model->placeOrder($id); redirect(base_url('detailOrder/'.$id));}
     $data['content'] = $this->client_model->cPlaceOrder($id);
     $this->load->view('template',$data);
   }
@@ -40,8 +42,6 @@ class Client extends CI_Controller
     $this->client_model->deleteData('detail_order', 'id', $id_package);
     redirect(base_url('placeOrder/'.$id_order));
   }
-
-
 
 }
 
