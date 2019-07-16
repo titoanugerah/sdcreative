@@ -138,12 +138,25 @@ class Client_model extends CI_Model
 
   public function cPlaceOrder($id)
   {
-    $data['order'] = $this->getDataRow('order','id',$id);
-    $data['detailOrder'] = $this->getSomeData('view_detail_order','id_order', $id); 
+    $data['order'] = $this->getDataRow('view_order','id',$id);
+    $data['detailOrder'] = $this->getSomeData('view_detail_order','id_order', $id);
     $data['view_name'] = 'placeOrder';
-    $data['package'] = $this->getAllData('package');
+    $data['package'] = $this->getAllData('view_package');
     $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
     return $data;
+  }
+
+  public function cOrderHistory()
+  {
+    $data['order'] = $this->getSomeData('view_order', 'id_customer', $this->session->userdata['id']);
+    $data['view_name'] = 'orderHistory';
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    return $data;
+  }
+
+  public function addOrder($id_order)
+  {
+    return $this->db->insert('detail_order',$data = array('id_order' => $id_order, 'id_package' => $this->input->post('id_package')));
   }
 }
 
