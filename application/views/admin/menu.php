@@ -33,7 +33,14 @@
   </a>
 </li>
 
-<li class="nav-item">
+<li class="nav-item <?php if($content['view_name']=='recapOrder'){echo 'active';} ?>">
+  <a  href="<?php echo base_url('recapOrder'); ?>" >
+    <i class="fas fa-list"></i>
+    <p>Order</p>
+  </a>
+</li>
+
+<li class="nav-item" hidden>
   <a data-toggle="collapse" href="#base">
     <i class="fas fa-layer-group"></i>
     <p>Order</p>

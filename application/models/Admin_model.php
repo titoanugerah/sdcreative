@@ -252,6 +252,14 @@ class Admin_model extends CI_Model{
     $id = $this->input->post('id');
     return $this->updateData('package', 'id', $id, 'image', 'package_'.$id.$this->uploadFile('package_'.$id,'jpg|png|jpeg')['ext']);
   }
+
+  public function cRecapOrder()
+  {
+    $data['list'] = $this->getAllData('view_order');
+    $data['webconf'] = $this->getDataRow('webconf','id',1);
+    $data['view_name'] = 'recapOrder';
+    return $data;
+  }
 }
 
  ?>

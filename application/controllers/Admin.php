@@ -54,5 +54,11 @@ class Admin extends CI_Controller{
     $this->load->view('template', $data);
   }
 
+  public function recapOrder()
+  {
+    $data['content'] = $this->admin_model->cRecapOrder();
+    $this->load->view('template', $data);
+  }
+
 }
  ?>

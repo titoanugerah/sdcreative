@@ -15,101 +15,75 @@
           <div class="card-body">
             <ul class="nav nav-pills nav-primary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#information" role="tab" aria-controls="information" aria-selected="true">
+                <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#unprocess" role="tab" aria-controls="information" aria-selected="true">
                   <i class="flaticon-location"></i>
-                  Informasi Umum
+                  Belum Diproses
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#order" role="tab" aria-controls="order" aria-selected="false">
+                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#unverified" role="tab" aria-controls="order" aria-selected="false">
                   <i class="flaticon-list"></i>
-                  Detail Layanan
+                  Belum Diverifikasi
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#pic" role="tab" aria-controls="order" aria-selected="false">
+                  <i class="flaticon-medical"></i>
+                  Tahap Pemilihan PIC
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#process" role="tab" aria-controls="order" aria-selected="false">
+                  <i class="flaticon-list"></i>
+                  Diproses
                 </a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#status" role="tab" aria-controls="order" aria-selected="false">
-                  <i class="flaticon-medical"></i>
-                  Status Layanan
+                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#unsend" role="tab" aria-controls="order" aria-selected="false">
+                  <i class="flaticon-list"></i>
+                  Belum Dikirim
                 </a>
               </li>
+
+              <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab-icon" data-toggle="pill" href="#finish" role="tab" aria-controls="order" aria-selected="false">
+                  <i class="flaticon-list"></i>
+                  Selesai
+                </a>
+              </li>
+
             </ul>
             <div class="tab-content mt-2 mb-3" id="pills-with-icon-tabContent">
               <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="pills-home-tab-icon">
 
                 <div class="card-body">
-                  <div class="row">
-                    <div class="form-group col-6">
-                      <label>Nama Lengkap Akun</label>
-                      <div class="input-group">
-                        <input type="text" class="form-control" aria-describedby="basic-addon1"  value="<?php echo $this->session->userdata['fullname']; ?>" readonly>
+
+                  <div class="bd-example">
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Layanan</th>
+                            <th scope="col">Harga</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $i=1;foreach ($content['detailOrder'] as $item): ?>
+
+                            <tr>
+                              <td><?php echo $i; ?></td>
+                              <td><?php echo $item->package; ?></td>
+                              <td><?php echo 'Rp. '.$item->price; ?></td>
+                            </tr>
+                            <?php $i++;endforeach; ?>
+                          </tbody>
+                        </table>
                       </div>
                     </div>
 
-                    <div class="form-group col-6 ">
-                      <label>Nomor HP</label>
-                      <input type="text" class="form-control" placeholder="Masukan nomor HP anda" name="phone_number" value="<?php echo $this->session->userdata['phone_number']; ?>" readonly>
-                    </div>
 
-                    <div class="form-group">
-                      <label>Pilih Hasil Layanan</label>
-                      <div class="selectgroup w-100" required>
-                        <label class="selectgroup-item">
-                          <input type="radio" name="need_hardfile" value="0" class="selectgroup-input" <?php if($content['order']->need_hardfile==0 && $content['order']->need_hardfile!=null){echo 'checked';} ?>>
-                          <span class="selectgroup-button">Hanya Softfile</span>
-                        </label>
-                        <label class="selectgroup-item">
-                          <input type="radio" name="need_hardfile" value="1" class="selectgroup-input" <?php if($content['order']->need_hardfile==1){echo 'checked';} ?>>
-                          <span class="selectgroup-button">Softfile dan Hardfile</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div class="form-group col-6 ">
-                      <label>Tanggal Pelaksanaan</label>
-                      <input type="date" class="form-control" name="date_event"  value="<?php echo $content['order']->date_event; ?>" readonly>
-                    </div>
-                  </div>
-                  <div class="row">
-
-                    <div class="form-group col-3 ">
-                      <label>Total Layanan</label>
-                      <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->total; ?>" readonly>
-                    </div>
-
-                    &nbsp;&nbsp;
-                    &nbsp;&nbsp;
-
-                    <div class="form-group col-3 ">
-                      <div class="row">
-                        <label>Kode Promo</label>
-                        <input type="text" class="form-control" name="promo" value="<?php if($content['order']->promo!=''|$content['order']->promo!=null){echo $content['order']->promo;} else{echo 'Tidak menggunakan promo';} ?>" readonly>
-                      </div>
-                    </div>
-                    &nbsp;&nbsp;
-                    &nbsp;&nbsp;
-
-                    <div class="form-group col-2 ">
-                      <label>Diskon</label>
-                      <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->discount; ?>" readonly>
-                    </div>
-
-                    <div class="form-group col-3 ">
-                      <label>Sub Total</label>
-                      <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->subtotal; ?>" readonly>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                  <div class="form-group col-<?php if($content['order']->need_hardfile==0){echo '12';} else{echo '6';}?>">
-                    <label>Alamat Event </label>
-                    <textarea class="form-control" name="address_event" rows="2" placeholder="masukan alamat event anda disini" readonly><?php echo $content['order']->address_event; ?></textarea>
-                  </div>
-
-                  <div class="form-group col-6" <?php if($content['order']->need_hardfile==0){echo 'hidden';} ?>>
-                    <label>Alamat dikirim </label>
-                    <textarea class="form-control" name="address_sent" rows="2" placeholder="masukan alamat pengiriman cetakan foto" readonly><?php echo $content['order']->address_sent; ?></textarea>
-                  </div>
                 </div>
 
                 </div>

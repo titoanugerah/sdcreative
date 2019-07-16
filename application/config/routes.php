@@ -15,6 +15,8 @@ $route['detailAccount/(:any)'] = 'admin/detailAccount/$1';
 $route['category'] = 'admin/category';
 $route['detailCategory/(:any)'] = 'admin/detailCategory/$1';
 $route['dashboard'] = 'general/dashboard';
+$route['recapOrder'] = 'admin/recapOrder';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
