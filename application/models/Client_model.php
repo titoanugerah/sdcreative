@@ -6,7 +6,7 @@ class Client_model extends CI_Model
 
   function __construct()
   {
-//    error_reporting(0);
+    //    error_reporting(0);
   }
   //CORE
   public function getDataRow($table, $whereVar, $whereVal)
@@ -90,15 +90,15 @@ class Client_model extends CI_Model
   {
     $account = $this->getDataRow('webconf', 'id', 1);
     $config = [
-      'protocol' => 'sentmail',
-      'smtp_host' => $account->host,
-      'smtp_user' => $account->email,
-      'smtp_pass' => $account->password,
-      'smtp_crypto' => $account->crypto,
-      'charset' => 'utf-8',
-      'crlf' => 'rn',
-      'newline' => "\r\n",
-      'smtp_port' => $account->port
+    'protocol' => 'sentmail',
+    'smtp_host' => $account->host,
+    'smtp_user' => $account->email,
+    'smtp_pass' => $account->password,
+    'smtp_crypto' => $account->crypto,
+    'charset' => 'utf-8',
+    'crlf' => 'rn',
+    'newline' => "\r\n",
+    'smtp_port' => $account->port
     ];
     $this->load->library('email', $config);
     $this->email->from($account->email);
@@ -161,10 +161,11 @@ class Client_model extends CI_Model
 
   public function addPromo($id)
   {
-//    $this->updateData('order',)
-    $this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'Y-m-d'));
-    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_event'));
-    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_sent'));
+    //    $this->updateData('order',)
+    //var_dump($this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'y-m-d')));die;
+    $this->updateData('order', 'id', $id, 'address_event', $this->input->post('address_event'));
+    $this->updateData('order', 'id', $id, 'address_sent', $this->input->post('address_sent'));
+    $this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'y-m-d'));
     $this->updateData('order', 'id', $id, 'need_hardfile', $this->input->post('need_hardfile'));
     if ($this->getNumRows('view_promo','promo_code', $this->input->post('promo'))>0) {
       if ($this->getDataRow('view_promo', 'promo_code', $this->input->post('promo'))->available>0) {
@@ -175,9 +176,10 @@ class Client_model extends CI_Model
 
   public function deletePromo($id)
   {
-    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_event'));
-    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('address_sent'));
-    $this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'Y-m-d'));
+    //    var_dump($this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'y-m-d')));die;
+    $this->updateData('order', 'id', $id, 'address_event', $this->input->post('address_event'));
+    $this->updateData('order', 'id', $id, 'address_sent', $this->input->post('address_sent'));
+    $this->updateData('order', 'id', $id, 'date_event', date_format(date_create($this->input->post('date_event')), 'y-m-d'));
     $this->updateData('order', 'id', $id, 'need_hardfile', $this->input->post('need_hardfile'));
     return $this->updateData('order', 'id', $id, 'promo', null);
   }
@@ -197,4 +199,4 @@ class Client_model extends CI_Model
     $this->updateData('order', 'id', $id, 'status', 2);
   }
 }
- ?>
+?>

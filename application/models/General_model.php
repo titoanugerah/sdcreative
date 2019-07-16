@@ -56,6 +56,18 @@ class General_model extends CI_Model{
 
   }
 
+  public function getSomeData($table, $whereVar, $whereVal)
+  {
+    $where = array($whereVar => $whereVal );
+    return $this->db->get_where($table, $where)->result();
+  }
+
+  public function getSomeDataS($table, $whereVar, $whereVal,$status)
+  {
+    $where = array($whereVar => $whereVal, 'status' => $status);
+    return $this->db->get_where($table, $where)->result();
+  }
+
 
   public function uploadFile($filename,$allowedFile)
   {
