@@ -23,6 +23,8 @@ class Client extends CI_Controller
   public function placeOrder($id)
   {
     if ($this->input->post('addOrder')) {$this->client_model->addOrder($id);}
+    elseif ($this->input->post('addPromo')) {$this->client_model->addPromo($id);}
+    elseif ($this->input->post('deletePromo')) {$this->client_model->deletePromo($id);}
     $data['content'] = $this->client_model->cPlaceOrder($id);
     $this->load->view('template',$data);
   }
@@ -39,7 +41,7 @@ class Client extends CI_Controller
     redirect(base_url('placeOrder/'.$id_order));
   }
 
-  
+
 
 }
 

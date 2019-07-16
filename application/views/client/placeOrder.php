@@ -31,7 +31,7 @@
 
               <div class="form-group">
                 <label>Pilih Hasil Layanan</label>
-                <div class="selectgroup w-100">
+                <div class="selectgroup w-100" required>
                   <label class="selectgroup-item">
                     <input type="radio" name="need_hardfile" value="0" class="selectgroup-input" <?php if($content['order']->need_hardfile==0 && $content['order']->need_hardfile!=null){echo 'checked';} ?>>
                     <span class="selectgroup-button">Hanya Softfile</span>
@@ -45,19 +45,26 @@
               </div>
               <div class="form-group col-6 ">
                 <label>Tanggal Pelaksanaan</label>
-                <input type="date" class="form-control" name="date_event">
+                <input type="date" class="form-control" name="date_event"  value="<?php echo $content['order']->date_event; ?>" required>
               </div>
               <div class="form-group col-2 ">
                 <label>Total Layanan</label>
                 <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->total; ?>" readonly>
               </div>
+              &nbsp;&nbsp;
+                &nbsp;&nbsp;
+              <div class="form-group col-4 ">
+                <div class="row">
 
-              <div class="form-group col-3 ">
                 <label>Kode Promo</label>
-                <input type="text" class="form-control" name="promoCode" value="" placeholder="masukan kode promo">
+                <input type="text" class="form-control col-10" name="promo" value="<?php echo $content['order']->promo; ?>" placeholder="masukan kode promo">
+                <button type="submit" name="addPromo" value="addPromo" class="btn col-2 btn-success" <?php if($content['order']->promo!=null){echo 'hidden';} ?>>+</button>
+                <button type="submit" name="deletePromo" value="deletePromo" class="btn col-2 btn-danger" <?php if($content['order']->promo==null){echo 'hidden';} ?>>x</button>
               </div>
-
-              <div class="form-group col-3 ">
+            </div>
+              &nbsp;&nbsp;
+                &nbsp;&nbsp;
+              <div class="form-group col-2 ">
                 <label>Diskon</label>
                 <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->discount; ?>" readonly>
               </div>

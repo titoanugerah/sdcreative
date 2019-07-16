@@ -158,6 +158,20 @@ class Client_model extends CI_Model
   {
     return $this->db->insert('detail_order',$data = array('id_order' => $id_order, 'id_package' => $this->input->post('id_package')));
   }
-}
 
+  public function addPromo($id)
+  {
+    if ($this->getDataRow('view_promo', 'promo_code', $this->input->post('promo'))->available>0) {
+      $this->updateData('order', 'id', $id, 'promo', $this->input->post('promo'));
+      $this->updateData('order', 'id', $id, 'date_event', $this->input->post('date_event'));
+    }
+  }
+
+  public function deletePromo($id)
+  {
+
+    $this->updateData('order', 'id', $id, 'date_event', $this->input->post('date_event'));
+    return $this->updateData('order', 'id', $id, 'promo', null);
+  }
+}
  ?>
