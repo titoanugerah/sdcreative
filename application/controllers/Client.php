@@ -37,12 +37,6 @@ class Client extends CI_Controller
     $this->load->view('template',$data);
   }
 
-  public function deleteDetailOrder($id_order, $id_package)
-  {
-    $this->client_model->deleteData('detail_order', 'id', $id_package);
-    redirect(base_url('placeOrder/'.$id_order));
-  }
-
 }
 
 

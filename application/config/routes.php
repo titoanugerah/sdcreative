@@ -24,6 +24,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['newOrder'] = 'client/newOrder';
 $route['createOrder/(:any)'] = 'client/createOrder/$1';
 $route['placeOrder/(:any)'] = 'client/placeOrder/$1';
-$route['deleteDetailOrder/(:any)/(:any)'] = 'client/deleteDetailOrder/$1/$2';
+$route['deleteDetailOrder/(:any)/(:any)'] = 'general/deleteDetailOrder/$1/$2';
 $route['detailOrder/(:any)'] = 'general/detailOrder/$1';
 $route['orderHistory'] = 'client/orderHistory';

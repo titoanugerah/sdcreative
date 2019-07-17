@@ -6,6 +6,7 @@ class General extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('general_model');
+		$this->load->model('admin_model');
 		error_reporting(0);
 	}
 
@@ -52,7 +53,16 @@ class General extends CI_Controller {
 
 	public function detailOrder($id)
 	{
+		if($this->input->post('addOrder')){$this->admin_model->addOrder($id);}
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}
+
+	public function deleteDetailOrder($id_order, $id_package)
+	{
+		$this->general_model->deleteData('detail_order', 'id', $id_package);
+		if ($this->session->userdata['role']=='client') {redirect(base_url('placeOrder/'.$id_order));}
+		if ($this->session->userdata['role']=='admin') {redirect(base_url('detailOrder/'.$id_order));}
+	}
+
 }

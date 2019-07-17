@@ -164,9 +164,11 @@ class General_model extends CI_Model{
   public function cDetailOrder($id)
   {
     $data['detailOrder'] = $this->getSomeData('view_detail_order','id_order',$id);
+    $data['package'] = $this->getAllData('view_package');
     $data['order'] = $this->getDataRow('view_order', 'id', $id);
     $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
     $data['view_name'] = 'detailOrder';
+
     return $data;
   }
 

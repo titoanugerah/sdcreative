@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin_model extends CI_Model{
   public function __construct()
   {
+//    if (!$this->session->userdata['admin']) {redirect(base_url('login'));}
   }
 
   //CORE
@@ -259,6 +260,11 @@ class Admin_model extends CI_Model{
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'recapOrder';
     return $data;
+  }
+
+  public function addOrder($id_order)
+  {
+    if (!$this->db->query('select * from detail_order where id_order = '.$id_order.' and id_package = '.$this->input->post('id_package'))->num_rows()>0) {return $this->db->insert('detail_order',$data = array('id_order' => $id_order, 'id_package' => $this->input->post('id_package')));}
   }
 }
 
