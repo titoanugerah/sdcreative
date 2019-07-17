@@ -40,7 +40,7 @@ class General extends CI_Controller {
 	public function profile()
 	{
 		if ($this->input->post('updateAccount')) {if($this->general_model->updateAccount()['status']){$this->session->set_userdata($this->general_model->updateAccount()['session']);}}
-		if ($this->input->post('upload')){$this->session->set_userdata($this->general_model->updateDisplayPicture());}
+		elseif ($this->input->post('upload')){$this->session->set_userdata($this->general_model->updateDisplayPicture());}
 		$data['content'] = $this->general_model->cProfile();
 		$this->load->view('template', $data);
 	}
@@ -54,6 +54,7 @@ class General extends CI_Controller {
 	public function detailOrder($id)
 	{
 		if($this->input->post('addOrder')){$this->admin_model->addOrder($id);}
+		elseif($this->input->post('acceptOrder')){$this->admin_model->acceptOrder($id);}
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}
@@ -62,7 +63,7 @@ class General extends CI_Controller {
 	{
 		$this->general_model->deleteData('detail_order', 'id', $id_package);
 		if ($this->session->userdata['role']=='client') {redirect(base_url('placeOrder/'.$id_order));}
-		if ($this->session->userdata['role']=='admin') {redirect(base_url('detailOrder/'.$id_order));}
+		elseif ($this->session->userdata['role']=='admin') {redirect(base_url('detailOrder/'.$id_order));}
 	}
 
 }

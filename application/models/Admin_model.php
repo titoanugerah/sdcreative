@@ -266,6 +266,12 @@ class Admin_model extends CI_Model{
   {
     if (!$this->db->query('select * from detail_order where id_order = '.$id_order.' and id_package = '.$this->input->post('id_package'))->num_rows()>0) {return $this->db->insert('detail_order',$data = array('id_order' => $id_order, 'id_package' => $this->input->post('id_package')));}
   }
+
+  public function acceptOrder($id)
+  {
+    $this->db->where($where = array('id' => $id ));
+    $this->db->update('order', $data = array('status' => 3, 'date_respond' =>date('Y-m-d H:i:s'), 'id_admin' => $this->session->userdata['id']));
+  }
 }
 
  ?>

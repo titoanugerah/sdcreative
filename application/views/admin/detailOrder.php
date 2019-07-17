@@ -367,9 +367,15 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="status" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
+              <div class="tab-pane fade" id="option" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
                 <div class="card-body">
-                  
+                  <form method="post">
+                    <div class="" <?php if($content['order']->status!=2){echo 'hidden';} ?>>
+                      <p>Untuk menyetujui silahkan klik button dibawah ini</p>
+                      <button type="submit" name="acceptOrder" value="acceptOrder" class="btn btn-success">Setujui</button>
+                    </div>
+
+                  </form>
                 </div>
               </div>
             </div>
