@@ -277,6 +277,16 @@ class Admin_model extends CI_Model{
   {
     $this->updateData('order', 'id', $id_order, 'status', $status);
   }
+
+  public function setPIC($id_order)
+  {
+//    var_dump($this->input->post('pic_1'));die;
+    for ($i=1; $i <= ($this->getDataRow('view_order', 'id', $id_order)->pic_count+1); $i++) {
+      $this->updateData('order', 'id', $id_order, 'pic_'.$i, $this->input->post('pic_'.$i));
+    }
+    $this->updateData('order', 'id', $id_order, 'status', 6);
+    
+  }
 }
 
  ?>

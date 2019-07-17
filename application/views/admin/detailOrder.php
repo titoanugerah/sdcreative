@@ -207,7 +207,7 @@
                           </div>
                         </li>
                         <li class="timeline-inverted" <?php if($content['order']->status==1 || $content['order']->status==2){echo 'hidden';} ?>>
-                          <div class="timeline-badge warning"><i class="flaticon-<?php if($content['order']->status==0){echo 'danger';} else {echo 'alarm';} ?>"></i></div>
+                          <div class="timeline-badge success"><i class="flaticon-<?php if($content['order']->status==0){echo 'danger';} else {echo 'alarm';} ?>"></i></div>
                           <div class="timeline-panel">
                             <div class="timeline-heading">
                               <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -234,6 +234,7 @@
                         </li>
 
                         <li class="timeline-inverted" <?php if($content['order']->status<=4){echo 'hidden';} ?>>
+                          <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                           <div class="timeline-panel">
                             <div class="timeline-heading">
                               <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -245,7 +246,8 @@
                         </li>
 
                         <li class="timeline-inverted" <?php if($content['order']->status<=5){echo 'hidden';} ?>>
-                          <div class="timeline-panel">
+                          <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
+      <div class="timeline-panel">
                             <div class="timeline-heading">
                               <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
                             </div>
@@ -256,9 +258,9 @@
                                 <?php for($i=1; $i<=$content['order']->pic_count; $i++){ ?>
                                   <div class="col-md-4">
                                     <div class="card" >
-                                      <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic.$i); ?>" alt="Card image cap">
+                                      <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic1); ?>" alt="Card image cap">
                                       <div class="card-body">
-                                        <h5 class="card-title"><?php echo $content['order']->fullname_pic.$i; ?></h5>
+                                        <h5 class="card-title"><?php echo $content['order']->fullname_pic1; ?></h5>
                                       </div>
                                     </div>
                                   </div>
@@ -375,7 +377,7 @@
                       <button type="submit" name="acceptOrder" value="acceptOrder" class="btn btn-success">Setujui</button>
                     </div>
 
-                    <div class="row">
+                    <div class="row" <?php if($content['order']->status!=4){echo 'hidden';} ?>>
                       <div class="card card-info card-annoucement card-round col-6" >
                         <div class="card-body text-center">
                           <div class="card-opening">Konfirmasi pembayaran DP</div>
@@ -390,6 +392,21 @@
                     </div>
 
 
+                    <?php for($i=1;$i<=$content['order']->pic_count;$i++){ ?>
+                    <div class="" <?php if($content['order']->status!=5){echo 'hidden';} ?>>
+                      <div class="form-group form-inline">
+                        <label for="inlineinput" class="col-form-label">Pilih PIC <?php echo $i; ?> </label>
+                        <div class="col-md-8">
+                          <select class="form-control" id="exampleFormControlSelect1" name="pic_<?php echo $i;?>">
+                            <?php foreach ($content['account'] as $item): if($item->role!='staff'){continue;} ?>
+                              <option value="<?php echo $item->id; ?>"><?php echo $item->fullname; ?></option>
+                            <?php endforeach; ?>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <?php } ?>
+                    <button type="submit" name="setPIC" value="setPIC" class="btn btn-success">Pilih PIC</button>
                   </form>
                 </div>
               </div>
