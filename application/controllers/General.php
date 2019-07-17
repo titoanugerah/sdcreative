@@ -7,6 +7,7 @@ class General extends CI_Controller {
 		parent::__construct();
 		$this->load->model('general_model');
 		$this->load->model('admin_model');
+		$this->load->model('client_model');
 		error_reporting(0);
 	}
 
@@ -55,6 +56,8 @@ class General extends CI_Controller {
 	{
 		if($this->input->post('addOrder')){$this->admin_model->addOrder($id);}
 		elseif($this->input->post('acceptOrder')){$this->admin_model->acceptOrder($id);}
+		elseif($this->input->post('uploadPayment1')){$this->client_model->uploadPayment($id, 1);}
+		elseif($this->input->post('verifyPayment1')){$this->admin_model->verifyPayment($id, 5);}
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}

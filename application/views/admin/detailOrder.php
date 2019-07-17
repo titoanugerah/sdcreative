@@ -228,7 +228,7 @@
                             </div>
                             <div class="timeline-body">
                               <p><?php echo $content['order']->fullname.' berhasil melakukan pembayaran dengan jumlah Rp. '.$content['order']->payment_amount_1; ?></p>
-                              <img src="<?php echo base_url('./assets/upload/'.$content['order']->payment_1); ?>" alt="">
+                              <img src="<?php echo base_url('./assets/upload/'.$content['order']->payment_1); ?>" alt="" class="col-12">
                             </div>
                           </div>
                         </li>
@@ -374,6 +374,21 @@
                       <p>Untuk menyetujui silahkan klik button dibawah ini</p>
                       <button type="submit" name="acceptOrder" value="acceptOrder" class="btn btn-success">Setujui</button>
                     </div>
+
+                    <div class="row">
+                      <div class="card card-info card-annoucement card-round col-6" >
+                        <div class="card-body text-center">
+                          <div class="card-opening">Konfirmasi pembayaran DP</div>
+                          <div class="card-desc">
+                            Silahkan lakukan proses verifikasi gambar bukti pembayaran, dengan nominal yang ditulis oleh pelanggan, apabila valid silahkan klik tombol dibawah ini
+
+                          </div>
+                        </div>
+                      </div>
+                      <img src="<?php echo base_url('./assets/upload/'.$content['order']->payment_1); ?>" class="col-6" width="300px">
+                      <button type="submit" name="verifyPayment1" value="verifyPayment1" class="btn btn-success">Konfirmasi Pembayaran</button>
+                    </div>
+
 
                   </form>
                 </div>
