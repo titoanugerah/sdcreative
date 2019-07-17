@@ -255,7 +255,7 @@ class Admin_model extends CI_Model{
 
   public function cRecapOrder()
   {
-    $data['list'] = $this->getAllData('view_order');
+    $data['order'] = $this->getAllData('view_order');
     $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'recapOrder';
     return $data;
