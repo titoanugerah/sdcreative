@@ -445,7 +445,9 @@
                         </div>
                       </div>
                     </div>
-                    <input type="text" name="payment_amount_2" class="form-control col-10" placeholder="Masukan nomor resi">
+                    <input type="text" name="payment_amount_2" class="form-control col-7" placeholder="Masukan nomor resi">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="delivery_fee" class="form-control col-3" placeholder="Masukan ongkir">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button type="submit" name="confirmDelivery" value="confirmDelivery" class="btn btn-success">Simpan</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
