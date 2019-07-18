@@ -27,3 +27,6 @@ $route['placeOrder/(:any)'] = 'client/placeOrder/$1';
 $route['deleteDetailOrder/(:any)/(:any)'] = 'general/deleteDetailOrder/$1/$2';
 $route['detailOrder/(:any)'] = 'general/detailOrder/$1';
 $route['orderHistory'] = 'client/orderHistory';
+
+//STAFF AREA
+$route['listJob'] = 'staff/listJob';
