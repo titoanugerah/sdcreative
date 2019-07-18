@@ -68,6 +68,7 @@ class General extends CI_Controller {
 		elseif($this->input->post('addLink2')){$this->staff_model->addLink($id,2,12);}
 		elseif($this->input->post('confirmDelivery')){$this->admin_model->confirmDelivery($id);}
 		elseif($this->input->post('confirmPackage')){$this->client_model->confirmPackage($id);}
+		elseif($this->input->post('submitRating')){$this->client_model->submitRating($id);}
 
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);

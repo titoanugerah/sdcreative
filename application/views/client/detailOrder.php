@@ -455,6 +455,49 @@
                 </div>
               </form>
 
+              <form method="post">
+              <div class="row" <?php if(($content['order']->status!=14 && $content['order']->need_hardfile!=1)||($content['order']->status!=12 && $content['order']->need_hardfile!=0)){echo 'hidden';} ?>>
+                <div class="card card-info card-annoucement card-round col-12" >
+                  <div class="card-body text-center">
+                    <div class="card-opening">Beri rating layanan kami</div>
+                    <div class="card-desc">
+                      Order kamu sudah selesai, silahkan  beri rating layanan kami untuk menerima invoice dari kami
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Pilih Hasil Layanan</label>
+                  <div class="selectgroup w-100" required>
+                    <label class="selectgroup-item">
+                      <input type="radio" name="rating" value="1" class="selectgroup-input">
+                      <span class="selectgroup-button">Buruk Sekali</span>
+                    </label>
+                    <label class="selectgroup-item">
+                      <input type="radio" name="rating" value="2" class="selectgroup-input" >
+                      <span class="selectgroup-button">Buruk</span>
+                    </label>
+
+                    <label class="selectgroup-item">
+                      <input type="radio" name="rating" value="3" class="selectgroup-input" >
+                      <span class="selectgroup-button">Cukup</span>
+                    </label>
+
+                    <label class="selectgroup-item">
+                      <input type="radio" name="rating" value="4" class="selectgroup-input" >
+                      <span class="selectgroup-button">Bagus</span>
+                    </label>
+
+                    <label class="selectgroup-item">
+                      <input type="radio" name="rating" value="5" class="selectgroup-input" >
+                      <span class="selectgroup-button">Sempurna</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" name="submitRating" value="submitRating" class="btn btn-success">Simpan</button>
+            </form>
+
                 </div>
               </div>
             </div>

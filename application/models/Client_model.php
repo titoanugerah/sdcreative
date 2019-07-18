@@ -215,5 +215,12 @@ class Client_model extends CI_Model
     $this->updateData('order', 'id', $id_order, 'status', 14);
     $this->updateData('order', 'id', $id_order, 'date_recieved', date('Y-m-d H:i:s'));
   }
+
+  public function submitRating($id_order)
+  {
+
+    $this->updateData('order', 'id', $id_order, 'status', 15);
+    $this->updateData('order', 'id', $id_order, 'rating', $this->input->post('rating'));
+  }
 }
 ?>
