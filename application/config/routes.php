@@ -6,6 +6,7 @@ $route['default_controller'] = 'general';
 $route['login'] = 'general/login';
 $route['profile'] = 'general/profile';
 $route['logout'] = 'general/logout';
+$route['register'] = 'general/register';
 
 
 //ADMIN AREA
@@ -16,7 +17,6 @@ $route['category'] = 'admin/category';
 $route['detailCategory/(:any)'] = 'admin/detailCategory/$1';
 $route['dashboard'] = 'general/dashboard';
 $route['recapOrder'] = 'admin/recapOrder';
-
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 

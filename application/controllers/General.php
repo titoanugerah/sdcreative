@@ -17,6 +17,14 @@ class General extends CI_Controller {
 		$this->home();
 	}
 
+	public function register()
+	{
+		$status = null;
+		if ($this->input->post('register')) {$status = $this->general_model->register();}
+		$data['content'] = $this->general_model->cRegister($status);
+		$this->load->view('register', $data);
+	}
+
 	public function home()
 	{
 		$data['content'] = $this->general_model->cHome();
@@ -68,7 +76,6 @@ class General extends CI_Controller {
 		elseif($this->input->post('confirmDelivery')){$this->admin_model->confirmDelivery($id);}
 		elseif($this->input->post('confirmPackage')){$this->client_model->confirmPackage($id);}
 		elseif($this->input->post('submitRating')){$this->client_model->submitRating($id);}
-
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}

@@ -87,6 +87,38 @@ class General_model extends CI_Model{
     return $upload;
   }
 
+  public function sentEmail($to, $fullname, $subject, $content)
+  {
+    $account = $this->getDataRow('webconf', 'id', 1);
+    $config = [
+      'protocol' => 'sentmail',
+      'smtp_host' => $account->host,
+      'smtp_user' => $account->email,
+      'smtp_pass' => $account->password,
+      'smtp_crypto' => $account->crypto,
+      'charset' => 'utf-8',
+      'crlf' => 'rn',
+      'newline' => "\r\n",
+      'smtp_port' => $account->port
+    ];
+    $this->load->library('email', $config);
+    $this->email->from($account->email);
+    $this->email->to($to);
+    $this->email->subject($subject);
+    $this->email->message('
+    Yth. '.$fullname.'
+    Di tempat.
+
+    '.$content.'
+
+    Atas perhatiannya kami ucapkan terima kasih.
+
+    Admin
+    ');
+    $sent = $this->email->send();
+    error_reporting(0);
+  }
+
   //FUNCTIONAL
   public function setSession($id)
   {
@@ -169,8 +201,22 @@ class General_model extends CI_Model{
     $data['order'] = $this->getDataRow('view_order', 'id', $id);
     $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
     $data['view_name'] = 'detailOrder';
-
     return $data;
+  }
+
+  public function cRegister()
+  {
+
+  }
+
+  public function register()
+  {
+    $password = rand(100000,999999);
+    $this->db->insert('account', $data = array('password' => md5($password), 'email' => $this->input->post('email'), 'role' => 'client', 'display_picture' => 'no.jpg'));
+    $this->updateData('account', 'id', $this->db->insert_id(), 'username', 'user'.$this->db->insert_id());
+    $this->updateData('account', 'id', $this->db->insert_id(), 'fullname', 'user'.$this->db->insert_id());
+    $content = 'Bersamaan dengan email ini kami sampaikan bahwa akun anda telah aktif, silahkan login dengan username user'.$this->db->insert_id().' dan password '.$password.' pada website kami http://mylogical.world';
+    $this->sendEmail($this->input->post('email'), 'Pengguna', 'Selamat Datang Pelanggan Baru', $content);
   }
 
 }

@@ -23,13 +23,13 @@
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title p-b-43">
-						Login to continue
+						Register
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="username">
+						<input class="input100" type="email" name="email">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Username</span>
+						<span class="label-input100">Email</span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
@@ -38,31 +38,11 @@
 						<span class="label-input100">Password</span>
 					</div>
 
-					<div class="flex-sb-m w-full p-t-3 p-b-32">
-						<div>
-							<a href="<?php echo base_url('forgotPassword'); ?>" class="txt1">
-								Forgot Password?
-							</a>
-						</div>
-					</div>
-
-
 					<div class="container-login100-form-btn">
-						<button class="btn btn-primary col-5" type="submit" name="loginValidation" value="loginValidation">Login</button> &nbsp;&nbsp;&nbsp;
-            <a href="<?php echo base_url('register'); ?>" class="btn btn-success col-5">Register</a>
+						<button class="btn btn-success col-5" type="submit" name="register" value="register">Register</button> &nbsp;&nbsp;&nbsp;
+            <a href="<?php echo base_url('login'); ?>" class="btn btn-primary col-5">Login</a>
 					</div>
 
-					<div class="text-center p-t-46 p-b-20">
-						<span class="txt2">
-							or sign up using
-						</span>
-					</div>
-
-					<div class="login100-form-social flex-c-m">
-						<a href="<?php echo base_url('./assets/template/login/'); ?>#" class="login100-form-social-item flex-c-m bg3 m-r-5">
-							<i class="fa fa-google" aria-hidden="true"></i>
-						</a>Google
-					</div>
 				</form>
 
 				<div class="login100-more" style="background-image: url('<?php echo base_url('./assets/template/login/'); ?>images/bg-01.jpg');">
