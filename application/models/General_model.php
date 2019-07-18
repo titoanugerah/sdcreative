@@ -206,7 +206,8 @@ class General_model extends CI_Model{
 
   public function cRegister()
   {
-
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    return $data;
   }
 
   public function register()
