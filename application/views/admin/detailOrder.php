@@ -271,9 +271,11 @@
                         </li>
 
                         <li class="timeline-inverted" <?php if($content['order']->status<=6){echo 'hidden';} ?>>
+                          <div class="timeline-badge info"><i class="flaticon-stopwatch"></i></div>
+
                           <div class="timeline-panel">
                             <div class="timeline-heading">
-                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                              <h4 class="timeline-title">Petugas Fotografer</h4>
                               <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_event; ?></small></p>
                             </div>
                             <div class="timeline-body">
@@ -283,12 +285,15 @@
                         </li>
 
                         <li class="timeline-inverted" <?php if($content['order']->status<=7){echo 'hidden';} ?>>
+                          <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
+
                           <div class="timeline-panel">
                             <div class="timeline-heading">
                               <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
                             </div>
                             <div class="timeline-body">
                               <p>Mengirimkan hasil pengambilan gambar yang diunggah pada link (<?php echo $content['order']->link_1; ?>)</p>
+                              <a href="<?php echo ($content['order']->link_1); ?>" class="btn btn-success"> Kunjungi Link</a>
                             </div>
                           </div>
                         </li>
@@ -337,7 +342,7 @@
                               <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
                             </div>
                             <div class="timeline-body">
-                              <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_1; ?>)</p>
+                              <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_2; ?>)</p>
                             </div>
                           </div>
                         </li>

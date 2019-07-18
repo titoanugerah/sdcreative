@@ -128,6 +128,25 @@ class Staff_model extends CI_Model
     return $data;
   }
 
+  public function addExtraOrder($id_order)
+  {
+    if (!$this->db->query('select * from detail_order where id_order = '.$id_order.' and id_package = '.$this->input->post('id_package'))->num_rows()>0) {return $this->db->insert('detail_order',$data = array('id_order' => $id_order, 'id_package' => $this->input->post('id_package')));}
+  }
+
+  public function confirmExecution($id_order)
+  {
+    $this->updateData('order', 'id', $id_order, 'date_execution', date('Y-m-d H:i:s'));
+    $this->updateData('order', 'id', $id_order, 'status', 7);
+  }
+
+  public function addLink($id_order, $link)
+  {
+    $this->updateData('order', 'id', $id_order, 'link_'.$link, $this->input->post('link_'.$link));
+    $this->updateData('order', 'id', $id_order, 'status', 8);
+    $this->updateData('order', 'id', $id_order, 'date_result_'.$link, date('Y-m-d H:i:s'));
+
+  }
+
 }
 
  ?>

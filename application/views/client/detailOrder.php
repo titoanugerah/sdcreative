@@ -187,7 +187,7 @@
                             </div>
                           </li>
                           <li class="timeline-inverted" <?php if($content['order']->status==1 || $content['order']->status==2){echo 'hidden';} ?>>
-                            <div class="timeline-badge warning"><i class="flaticon-<?php if($content['order']->status==0){echo 'danger';} else {echo 'alarm';} ?>"></i></div>
+                            <div class="timeline-badge success"><i class="flaticon-<?php if($content['order']->status==0){echo 'danger';} else {echo 'alarm';} ?>"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -208,12 +208,13 @@
                               </div>
                               <div class="timeline-body">
                                 <p><?php echo $content['order']->fullname.' berhasil melakukan pembayaran dengan jumlah Rp. '.$content['order']->payment_amount_1; ?></p>
-                                <img src="<?php echo base_url('./assets/upload/'.$content['order']->payment_1); ?>" alt="" width="350px">
+                                <img src="<?php echo base_url('./assets/upload/'.$content['order']->payment_1); ?>" alt="" class="col-12">
                               </div>
                             </div>
                           </li>
 
                           <li class="timeline-inverted" <?php if($content['order']->status<=4){echo 'hidden';} ?>>
+                            <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -225,6 +226,7 @@
                           </li>
 
                           <li class="timeline-inverted" <?php if($content['order']->status<=5){echo 'hidden';} ?>>
+                            <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -236,9 +238,9 @@
                                   <?php for($i=1; $i<=$content['order']->pic_count; $i++){ ?>
                                     <div class="col-md-4">
                                       <div class="card" >
-                                        <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic.$i); ?>" alt="Card image cap">
+                                        <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic1); ?>" alt="Card image cap">
                                         <div class="card-body">
-                                          <h5 class="card-title"><?php echo $content['order']->fullname_pic.$i; ?></h5>
+                                          <h5 class="card-title"><?php echo $content['order']->fullname_pic1; ?></h5>
                                         </div>
                                       </div>
                                     </div>
@@ -249,9 +251,11 @@
                           </li>
 
                           <li class="timeline-inverted" <?php if($content['order']->status<=6){echo 'hidden';} ?>>
+                            <div class="timeline-badge info"><i class="flaticon-stopwatch"></i></div>
+
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                                <h4 class="timeline-title">Petugas Fotografer</h4>
                                 <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_event; ?></small></p>
                               </div>
                               <div class="timeline-body">
@@ -261,12 +265,17 @@
                           </li>
 
                           <li class="timeline-inverted" <?php if($content['order']->status<=7){echo 'hidden';} ?>>
+                            <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
+
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                                <h4 class="timeline-title">Petugas Fotografer</h4>
+                                <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_result_1; ?></small></p>
+
                               </div>
                               <div class="timeline-body">
                                 <p>Mengirimkan hasil pengambilan gambar yang diunggah pada link (<?php echo $content['order']->link_1; ?>)</p>
+                                <a href="<?php echo ($content['order']->link_1); ?>" class="btn btn-success"> Kunjungi Link</a>
                               </div>
                             </div>
                           </li>
@@ -315,7 +324,7 @@
                                 <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
                               </div>
                               <div class="timeline-body">
-                                <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_1; ?>)</p>
+                                <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_2; ?>)</p>
                               </div>
                             </div>
                           </li>

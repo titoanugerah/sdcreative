@@ -8,6 +8,7 @@ class General extends CI_Controller {
 		$this->load->model('general_model');
 		$this->load->model('admin_model');
 		$this->load->model('client_model');
+		$this->load->model('staff_model');
 		error_reporting(0);
 	}
 
@@ -59,7 +60,9 @@ class General extends CI_Controller {
 		elseif($this->input->post('uploadPayment1')){$this->client_model->uploadPayment($id, 1);}
 		elseif($this->input->post('verifyPayment1')){$this->admin_model->verifyPayment($id, 5);}
 		elseif($this->input->post('setPIC')){$this->admin_model->setPIC($id);}
-
+		elseif($this->input->post('addExtraOrder')){$this->staff_model->addExtraOrder($id);}
+		elseif($this->input->post('confirmExecution')){$this->staff_model->confirmExecution($id);}
+		elseif($this->input->post('addLink1')){$this->staff_model->addLink($id,1);}
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}
@@ -69,6 +72,8 @@ class General extends CI_Controller {
 		$this->general_model->deleteData('detail_order', 'id', $id_package);
 		if ($this->session->userdata['role']=='client') {redirect(base_url('placeOrder/'.$id_order));}
 		elseif ($this->session->userdata['role']=='admin') {redirect(base_url('detailOrder/'.$id_order));}
+		elseif ($this->session->userdata['role']=='staff') {redirect(base_url('detailOrder/'.$id_order));}
+
 	}
 
 }

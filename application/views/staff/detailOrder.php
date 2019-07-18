@@ -123,7 +123,7 @@
             <div class="tab-pane fade" id="order" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
               <form  method="post">
                 <div class="card-body">
-                  <div class="row" <?php if($content['order']->status!=2){echo 'hidden';} ?>>
+                  <div class="row" <?php if($content['order']->status!=6){echo 'hidden';} ?>>
                     <div class="form-group form-inline">
                       <label for="inlineinput" class="col-form-label">Layanan </label>
                       <div class="col-md-8">
@@ -137,7 +137,7 @@
 
 
                     <div class="form-group col-4">
-                      <button class="btn btn-success" type="submit" name="addOrder" value="addOrder">Tambah Order</button>
+                      <button class="btn btn-success" type="submit" name="addExtraOrder" value="addExtraOrder">Tambah Order</button>
                     </div>
 
                   </div>
@@ -150,7 +150,7 @@
                           <th scope="col">No</th>
                           <th scope="col">Nama Layanan</th>
                           <th scope="col">Harga</th>
-                          <th scope="col" <?php if($content['order']->status!=2){echo 'hidden';} ?>>Opsi</th>
+                          <th scope="col" <?php if($content['order']->status!=6){echo 'hidden';} ?>>Opsi</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -160,7 +160,7 @@
                             <td><?php echo $i; ?></td>
                             <td><?php echo $item->package; ?></td>
                             <td><?php echo 'Rp. '.$item->price; ?></td>
-                            <td <?php if($content['order']->status!=2){echo 'hidden';} ?>> <a href="<?php echo base_url('deleteDetailOrder/'.$content['order']->id.'/'.$item->id); ?>" class="btn btn-danger">Hapus</a> </td>
+                            <td <?php if($content['order']->status!=6){echo 'hidden';} ?>> <a href="<?php echo base_url('deleteDetailOrder/'.$content['order']->id.'/'.$item->id); ?>" class="btn btn-danger">Hapus</a> </td>
                           </tr>
                           <?php $i++;endforeach; ?>
                         </tbody>
@@ -271,9 +271,11 @@
                         </li>
 
                         <li class="timeline-inverted" <?php if($content['order']->status<=6){echo 'hidden';} ?>>
+                          <div class="timeline-badge info"><i class="flaticon-stopwatch"></i></div>
+
                           <div class="timeline-panel">
                             <div class="timeline-heading">
-                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                              <h4 class="timeline-title">Petugas Fotografer</h4>
                               <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_event; ?></small></p>
                             </div>
                             <div class="timeline-body">
@@ -283,12 +285,15 @@
                         </li>
 
                         <li class="timeline-inverted" <?php if($content['order']->status<=7){echo 'hidden';} ?>>
+                          <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
+
                           <div class="timeline-panel">
                             <div class="timeline-heading">
                               <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
                             </div>
                             <div class="timeline-body">
                               <p>Mengirimkan hasil pengambilan gambar yang diunggah pada link (<?php echo $content['order']->link_1; ?>)</p>
+                              <a href="<?php echo ($content['order']->link_1); ?>" class="btn btn-success"> Kunjungi Link</a>
                             </div>
                           </div>
                         </li>
@@ -337,7 +342,7 @@
                               <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
                             </div>
                             <div class="timeline-body">
-                              <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_1; ?>)</p>
+                              <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_2; ?>)</p>
                             </div>
                           </div>
                         </li>
@@ -393,7 +398,7 @@
 
 
                     <div class="" <?php if($content['order']->status!=5){echo 'hidden';} ?>>
-                    <?php for($i=1;$i<=$content['order']->pic_count;$i++){ ?>
+                      <?php for($i=1;$i<=$content['order']->pic_count;$i++){ ?>
                         <div class="form-group form-inline">
                           <label for="inlineinput" class="col-form-label">Pilih PIC <?php echo $i; ?> </label>
                           <div class="col-md-8">
@@ -404,9 +409,37 @@
                             </select>
                           </div>
                         </div>
-                    <?php } ?>
-                    <button type="submit" name="setPIC" value="setPIC" class="btn btn-success" <?php if($content['order']->status!=5){echo 'hidden';} ?>>Pilih PIC</button>
-                  </div>
+                      <?php } ?>
+                      <button type="submit" name="setPIC" value="setPIC" class="btn btn-success" <?php if($content['order']->status!=5){echo 'hidden';} ?>>Pilih PIC</button>
+                    </div>
+
+                    <div class="row" <?php if($content['order']->status!=6){echo 'hidden';} ?>>
+
+                      <div class="card card-info card-annoucement card-round col-12" >
+                        <div class="card-body text-center">
+                          <div class="card-opening">Konfirmasi Eksekusi Pekerjaan</div>
+                          <div class="card-desc">
+                            Apabila anda selesai melakukan pekerjaan, silahkan konfirmasi pada tombol dibawah ini
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" name="confirmExecution" value="confirmExecution" class="btn btn-success">Upload</button>
+                    </div>
+
+                    <div class="row" <?php if($content['order']->status!=7){echo 'hidden';} ?>>
+
+                      <div class="card card-info card-annoucement card-round col-12" >
+                        <div class="card-body text-center">
+                          <div class="card-opening">Kirim tautan hasil dokumentasi</div>
+                          <div class="card-desc">
+                            Silahkan upload hasil dokumentasi ke dalam google drive, kemudian salin link google drive pada kolom dibawah ini
+                          </div>
+                        </div>
+                      </div>
+                      <input type="text" name="link_1" class="form-control col-10" placeholder="Paste link Google Drive disini"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <button type="submit" name="addLink1" value="addLink1" class="btn btn-success">Kirim</button>
+
+                    </div>
                   </form>
                 </div>
               </div>
