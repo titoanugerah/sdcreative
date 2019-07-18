@@ -217,7 +217,7 @@ class General_model extends CI_Model{
     $this->updateData('account', 'id', $this->db->insert_id(), 'username', $this->input->post('username'));
     $this->updateData('account', 'id', $this->db->insert_id(), 'fullname', 'user'.$this->db->insert_id());
     $content = 'Bersamaan dengan email ini kami sampaikan bahwa akun anda telah aktif, silahkan login dengan username user'.$this->db->insert_id().' dan password '.$password.' pada website kami http://mylogical.world';
-    $this->sendEmail($this->input->post('email'), 'Pengguna', 'Selamat Datang Pelanggan Baru', $content);
+    $this->sentEmail($this->input->post('email'), 'Pengguna', 'Selamat Datang Pelanggan Baru', $content);
   }
 
 }
