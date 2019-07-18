@@ -202,10 +202,12 @@ class Client_model extends CI_Model
   public function uploadPayment($id_order, $payment)
   {
     $type = null; if($payment==1){$type = 'dp';} else{$type='full';}
+    $status = null; if($payment==1){$status = 4;} else{$status=10;}
+
     $this->updateData('order', 'id', $id_order, 'payment_'.$payment, 'payment_'.$payment.'_order_'.$id_order.$this->uploadFile('payment_'.$payment.'_order_'.$id_order, 'jpg|jpeg|png')['ext']);
-    $this->updateData('order', 'id', $id_order, 'status', 4);
+    $this->updateData('order', 'id', $id_order, 'status', $status);
     $this->updateData('order', 'id', $id_order, 'date_payment_'.$type, date('Y-m-d H:i:s'));
-    $this->updateData('order', 'id', $id_order, 'payment_amount_'.$payment, $this->input->post('payment_amount_1'));
+    $this->updateData('order', 'id', $id_order, 'payment_amount_'.$payment, $this->input->post('payment_amount_'.$payment));
 
   }
 }

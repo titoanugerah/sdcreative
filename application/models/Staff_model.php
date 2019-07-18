@@ -139,10 +139,10 @@ class Staff_model extends CI_Model
     $this->updateData('order', 'id', $id_order, 'status', 7);
   }
 
-  public function addLink($id_order, $link)
+  public function addLink($id_order, $link, $status)
   {
     $this->updateData('order', 'id', $id_order, 'link_'.$link, $this->input->post('link_'.$link));
-    $this->updateData('order', 'id', $id_order, 'status', 8);
+    $this->updateData('order', 'id', $id_order, 'status', $status);
     $this->updateData('order', 'id', $id_order, 'date_result_'.$link, date('Y-m-d H:i:s'));
 
   }

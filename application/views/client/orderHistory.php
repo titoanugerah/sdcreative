@@ -37,7 +37,7 @@
 
               <br><br>
               <div class="row">
-                <?php foreach ($content['order'] as $item): if($item->status==0 || $item->status>8){continue;} ?>
+                <?php foreach ($content['order'] as $item): if($item->status==0 || $item->status>14){continue;} ?>
                   <div class="col-md-4">
                     <div class="card" >
                       <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->image); ?>" alt="Card image cap">

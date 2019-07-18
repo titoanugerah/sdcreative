@@ -7,7 +7,7 @@
     </div>
   </div>
 </div>
-<div class="page-inner mt--5">
+
   <div class="page-inner mt--5">
     <div class="row">
       <div class="col-md-12">
@@ -255,7 +255,7 @@
 
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title">Petugas Fotografer</h4>
+                                <h4 class="timeline-title">PIC</h4>
                                 <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_event; ?></small></p>
                               </div>
                               <div class="timeline-body">
@@ -269,9 +269,7 @@
 
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title">Petugas Fotografer</h4>
-                                <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_result_1; ?></small></p>
-
+                                <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
                               </div>
                               <div class="timeline-body">
                                 <p>Mengirimkan hasil pengambilan gambar yang diunggah pada link (<?php echo $content['order']->link_1; ?>)</p>
@@ -308,6 +306,8 @@
                           </li>
 
                           <li class="timeline-inverted" <?php if($content['order']->status<=10){echo 'hidden';} ?>>
+                            <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
+
                             <div class="timeline-panel">
                               <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -319,12 +319,16 @@
                           </li>
 
                           <li class="timeline-inverted" <?php if($content['order']->status<=11){echo 'hidden';} ?>>
+                            <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
+
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                                <h4 class="timeline-title">PIC</h4>
                               </div>
                               <div class="timeline-body">
                                 <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_2; ?>)</p>
+                                <a href="<?php echo ($content['order']->link_2); ?>" class="btn btn-success"> Kunjungi Link</a>
+
                               </div>
                             </div>
                           </li>
@@ -340,7 +344,7 @@
                             </div>
                           </li>
 
-                          <li class="timeline-inverted" <?php if($content['order']->status<=10){echo 'hidden';} ?>>
+                          <li class="timeline-inverted" <?php if(($content['order']->need_hardfile==1 & $content['order']->status<=13) || ($content['order']->need_hardfile==0)){echo 'hidden';} ?>>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
@@ -411,6 +415,25 @@
                       <?php } ?>
                     </div>
                   </div>
+                  <form method="post">
+                  <div class="row" <?php if($content['order']->status!=8){echo 'hidden';} ?>>
+                    <div class="card card-info card-annoucement card-round col-12" >
+                      <div class="card-body text-center">
+                        <div class="card-opening">Lakukan pemilihan foto</div>
+                        <div class="card-desc">
+                          Foto yang dilampirkan didalam link Google Drive merupakan hasil dokumentasi yang <b>belum</b> dilakukan proses edit, silahkan memilih foto yang akan diedit dengan cara memindahkan foto kedalam folder EDIT, jumlah foto disesuaikan dengan paket yang dipilih, apabila jumlah foto yang ada dalam folder berlebih, maka yang akan diedit sesuai dengan jumlah yang ada pada paket. Untuk melanjutkan silahkan lunasi sisa pembayaran anda sebanyak Rp.<?php echo $content['order']->subtotal-$content['order']->payment_amount_1; ?> melalui transfer bank <?php echo $content['order']->bank; ?> dengan nomor rekening <?php echo $content['webconf']->bank_account; ?>. apabila anda sudah melakukan proses pemlihan gambar dan transfer silahkan masukan bukti pembayaran dibawah ini beserta nominalnya, kemudian klik upload
+                        </div>
+                      </div>
+                    </div>
+                    <input type="file" name="fileUpload" class="btn btn-primary">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="payment_amount_2" class="form-control col-6" placeholder="Masukan nominal pengiriman anda disini contoh 300000">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" name="uploadPayment2" value="uploadPayment2" class="btn btn-success">Upload</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </div>
+                </form>
+
                 </div>
               </div>
             </div>
@@ -418,5 +441,3 @@
         </div>
       </div>
     </div>
-
-  </div>

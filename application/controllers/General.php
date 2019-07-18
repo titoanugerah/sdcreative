@@ -62,7 +62,10 @@ class General extends CI_Controller {
 		elseif($this->input->post('setPIC')){$this->admin_model->setPIC($id);}
 		elseif($this->input->post('addExtraOrder')){$this->staff_model->addExtraOrder($id);}
 		elseif($this->input->post('confirmExecution')){$this->staff_model->confirmExecution($id);}
-		elseif($this->input->post('addLink1')){$this->staff_model->addLink($id,1);}
+		elseif($this->input->post('addLink1')){$this->staff_model->addLink($id,1,8);}
+		elseif($this->input->post('uploadPayment2')){$this->client_model->uploadPayment($id, 2); }
+		elseif($this->input->post('verifyPayment2')){$this->admin_model->verifyPayment($id, 11);}
+		elseif($this->input->post('addLink2')){$this->staff_model->addLink($id,2,12);}
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}
