@@ -66,6 +66,9 @@ class General extends CI_Controller {
 		elseif($this->input->post('uploadPayment2')){$this->client_model->uploadPayment($id, 2); }
 		elseif($this->input->post('verifyPayment2')){$this->admin_model->verifyPayment($id, 11);}
 		elseif($this->input->post('addLink2')){$this->staff_model->addLink($id,2,12);}
+		elseif($this->input->post('confirmDelivery')){$this->admin_model->confirmDelivery($id);}
+		elseif($this->input->post('confirmPackage')){$this->client_model->confirmPackage($id);}
+
 		$data['content'] = $this->general_model->cDetailOrder($id);
 		$this->load->view('template', $data);
 	}

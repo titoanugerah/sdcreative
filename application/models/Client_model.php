@@ -208,7 +208,12 @@ class Client_model extends CI_Model
     $this->updateData('order', 'id', $id_order, 'status', $status);
     $this->updateData('order', 'id', $id_order, 'date_payment_'.$type, date('Y-m-d H:i:s'));
     $this->updateData('order', 'id', $id_order, 'payment_amount_'.$payment, $this->input->post('payment_amount_'.$payment));
+  }
 
+  public function confirmPackage($id_order)
+  {
+    $this->updateData('order', 'id', $id_order, 'status', 14);
+    $this->updateData('order', 'id', $id_order, 'date_recieved', date('Y-m-d H:i:s'));
   }
 }
 ?>

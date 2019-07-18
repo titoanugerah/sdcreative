@@ -168,6 +168,8 @@
                     </div>
                   </div>
                 </div>
+
+
                 <div class="tab-pane fade" id="status" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
                   <div class="card-body">
                     <div class="row">
@@ -333,24 +335,28 @@
                             </div>
                           </li>
 
-                          <li class="timeline-inverted" <?php if($content['order']->status<=12){echo 'hidden';} ?>>
-                            <div class="timeline-panel">
-                              <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
-                              </div>
-                              <div class="timeline-body">
-                                <p>Mengirimkan hasil gambar yang sudah diedit pada link (<?php echo $content['order']->link_2; ?>)</p>
-                              </div>
-                            </div>
-                          </li>
-
-                          <li class="timeline-inverted" <?php if(($content['order']->need_hardfile==1 & $content['order']->status<=13) || ($content['order']->need_hardfile==0)){echo 'hidden';} ?>>
+                          <li class="timeline-inverted" <?php if(($content['order']->need_hardfile==1 & $content['order']->status<13) || ($content['order']->need_hardfile==0)){echo 'hidden';} ?>>
+                            <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
                                 <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
                               </div>
                               <div class="timeline-body">
-                                <p>Berhasil mengirimkan hasil hardfile gambar ke lokasi yang ditentukan ( <?php echo $content['order']->address_sent; ?>) dengan nomor resi </p>
+                                <p>Berhasil mengirimkan hasil hardfile gambar ke lokasi yang ditentukan ( <?php echo $content['order']->address_sent; ?>) dengan nomor resi <?php echo $content['order']->awb; ?> </p>
+                              </div>
+                            </div>
+                          </li>
+
+                          <li <?php if(($content['order']->need_hardfile==1 & $content['order']->status<14) || ($content['order']->need_hardfile==0)){echo 'hidden';} ?>>
+                            <div class="timeline-badge"><i class="flaticon-message"></i></div>
+                            <div class="timeline-panel">
+                              <div class="timeline-heading">
+                                <h4 class="timeline-title"><?php echo $content['order']->fullname; ?></h4>
+                                <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_recieved; ?></small></p>
+
+                              </div>
+                              <div class="timeline-body">
+                                <p> Barang diterima oleh <?php echo $content['order']->fullname; ?> </p>
                               </div>
                             </div>
                           </li>
@@ -360,7 +366,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="option" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
+                      <div class="tab-pane fade" id="option" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
                   <form  method="post" enctype="multipart/form-data">
                     <div class="card-body">
                       <div class="row" <?php if($content['order']->status!=3){echo 'hidden';} ?>>
@@ -433,6 +439,21 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </div>
                 </form>
+
+                <form method="post">
+                <div class="row" <?php if($content['order']->status!=13){echo 'hidden';} ?>>
+                  <div class="card card-info card-annoucement card-round col-12" >
+                    <div class="card-body text-center">
+                      <div class="card-opening">Konfirmasi pengiriman barang</div>
+                      <div class="card-desc">
+                        Apabila barang sudah sampai silahkan klik tombol dibawah ini
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" name="confirmPackage" value="confirmPackage" class="btn btn-success">Konfirmasi Barang Sudah Diterima</button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+              </form>
 
                 </div>
               </div>

@@ -281,11 +281,16 @@ class Admin_model extends CI_Model{
   public function setPIC($id_order)
   {
 //    var_dump($this->input->post('pic_1'));die;
-    for ($i=1; $i <= ($this->getDataRow('view_order', 'id', $id_order)->pic_count+1); $i++) {
-      $this->updateData('order', 'id', $id_order, 'pic_'.$i, $this->input->post('pic_'.$i));
-    }
+    for ($i=1; $i <= ($this->getDataRow('view_order', 'id', $id_order)->pic_count+1); $i++) {$this->updateData('order', 'id', $id_order, 'pic_'.$i, $this->input->post('pic_'.$i));}
     $this->updateData('order', 'id', $id_order, 'status', 6);
-    
+  }
+
+  public function confirmDelivery($id_order)
+  {
+    $this->updateData('order', 'id', $id_order, 'awb', $this->input->post('awb'));
+    $this->updateData('order', 'id', $id_order, 'delivery_fee', $this->input->post('delivery_fee'));
+    $this->updateData('order', 'id', $id_order, 'date_delivered', date('Y-m-d H:i:s'));
+    $this->updateData('order', 'id', $id_order, 'status', 13);
   }
 }
 
