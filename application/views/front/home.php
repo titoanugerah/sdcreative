@@ -34,7 +34,7 @@
           <!-- Menu -->
           <nav class="classy-navbar justify-content-between" id="pixelNav">
             <!-- Nav brand -->
-            <a href="index.html" class="nav-brand"><img src="<?php echo base_url('./assets/template/pixel/'); ?>img/core-img/logo.png" alt=""></a>
+            <a href="<?php echo base_url('') ?>" class="nav-brand"><img src="<?php echo base_url('./assets/upload/'.$content['webconf']->logo); ?>" alt="" style="width:100px"></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -53,16 +53,14 @@
               <div class="classynav">
                 <ul>
                   <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="services.html">Services</a></li>
                   <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
                 </ul>
 
                 <!-- Top Social Info -->
                 <div class="top-social-info ml-5">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-instagram"></i></a>
-                  <a href="#"><i class="fa fa-youtube"></i></a>
+                  <a href="<?php echo 'http://www.facebook.com/'.$content['webconf']->facebook; ?>"><i class="fa fa-facebook"></i></a>
+                  <a href="<?php echo 'http://www.instagram.com/'.$content['webconf']->instagram; ?>"><i class="fa fa-instagram"></i></a>
+                  <a href="<?php echo 'http://www.youtube.com/'.$content['webconf']->youtube; ?>"><i class="fa fa-youtube"></i></a>
                 </div>
               </div>
               <!-- Nav End -->
@@ -241,7 +239,7 @@
             <div class="col-sm-4">
               <div class="single-footer-widget mb-100">
                 <h5 class="widget-title">Address</h5>
-                <p>1530 Doverfield Ave <br> Hacienda Heights, California(CA), 91745</p>
+                <p><?php echo $content['webconf']->address.$content['webconf']->office_number; ?><br> Indonesia</p>
               </div>
             </div>
 
@@ -249,7 +247,7 @@
             <div class="col-sm-4">
               <div class="single-footer-widget mb-100">
                 <h5 class="widget-title">Support</h5>
-                <p><i class="fa fa-phone"></i> <br> +01 251 332 331</p>
+                <p><i class="fa fa-phone"></i> <br> <?php echo $content['webconf']->webconf; ?></p>
               </div>
             </div>
 
@@ -258,9 +256,9 @@
               <div class="single-footer-widget mb-100">
                 <h5 class="widget-title">Social</h5>
                 <div class="footer-social-info">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-instagram"></i></a>
-                  <a href="#"><i class="fa fa-youtube"></i></a>
+                  <a href="<?php echo 'http://www.facebook.com/'.$content['webconf']->facebook; ?>"><i class="fa fa-facebook"></i></a>
+                  <a href="<?php echo 'http://www.instagram.com/'.$content['webconf']->instagram; ?>"><i class="fa fa-instagram"></i></a>
+                  <a href="<?php echo 'http://www.youtube.com/'.$content['webconf']->youtube; ?>"><i class="fa fa-youtube"></i></a>
                 </div>
               </div>
             </div>
@@ -277,13 +275,13 @@
             <div class="copywrite-content">
               <!-- Copywrite Text -->
               <p class="copywrite-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               </p>
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <h4 style="color:white;">slogan</h4>
+            <h4 style="color:white;">Capturing The Right Golden Moment</h4>
           </div>
         </div>
       </div>
