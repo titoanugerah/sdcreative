@@ -280,9 +280,12 @@
               </p>
             </div>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-2">
+          </div>
+          <div class="col-12 col-md-4">
             <h6 style="color:white;"><i>"Capturing The Right Golden Moment"</i></h6>
           </div>
+
         </div>
       </div>
     </div>
