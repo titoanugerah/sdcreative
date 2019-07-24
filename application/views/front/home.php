@@ -281,7 +281,7 @@
             </div>
           </div>
           <div class="col-12 col-md-6">
-            <h4 style="color:white;">Capturing The Right Golden Moment</h4>
+            <h6 style="color:white;"><i>"Capturing The Right Golden Moment"</i></h6>
           </div>
         </div>
       </div>
