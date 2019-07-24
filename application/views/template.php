@@ -31,7 +31,10 @@
 			<div class="logo-header" data-background-color="blue">
 
 				<a href="<?php echo base_url('dashboard'); ?>" class="logo">
-					<img src="<?php echo base_url('./assets/template/atlantisLite'); ?>/assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+					<div class="row">
+						<img src="<?php echo base_url('./assets/upload/'.$content['webconf']->logo); ?>" alt="navbar brand" class="navbar-brand" style="width:60px;">
+						<h2 style="color:white;"><?php echo $content['webconf']->website_name; ?></h2>
+					</div>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
