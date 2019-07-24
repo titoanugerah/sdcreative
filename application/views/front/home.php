@@ -247,7 +247,10 @@
             <div class="col-sm-4">
               <div class="single-footer-widget mb-100">
                 <h5 class="widget-title">Support</h5>
-                <p><i class="fa fa-phone"></i> <br> <?php echo $content['webconf']->webconf; ?></p>
+                <div class="row">
+
+                  <p><i class="fa fa-phone"></i> <br> <h6 style="color:white;font-size:18pt;"><?php echo $content['webconf']->phone_number; ?></h6></p>
+                </div>
               </div>
             </div>
 
