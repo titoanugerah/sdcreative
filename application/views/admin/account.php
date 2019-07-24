@@ -44,8 +44,6 @@
                 </div>
               </div>
             </form>
-
-
               <br><br>
               <div class="row">
                 <?php foreach ($content['account'] as $item): if($item->role!='staff'){continue;} ?>
