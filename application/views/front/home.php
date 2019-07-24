@@ -228,7 +228,7 @@
         <div class="col-12 col-sm-6 col-md-3">
           <div class="single-footer-widget mb-100">
             <!-- Footer Logo -->
-            <a href="index.html" class="footer-logo"><img src="<?php echo base_url('./assets/upload/'.$content['webconf']->logo); ?>" alt="" style="width:100px;"></a>
+            <a href="index.html" class="footer-logo"><img src="<?php echo base_url('./assets/upload/'.$content['webconf']->logo); ?>" alt="" style="width:200px;"></a>
           </div>
         </div>
 
