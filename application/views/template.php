@@ -134,7 +134,7 @@
 								</ul>
 					</nav>
 					<div class="copyright ml-auto">
-						<?php echo date('Y'); ?>, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://mylogical.world">1201154441 | Telkom University</a>
+						<?php echo date('Y'); ?>, made by <a href="https://mylogical.world">1201154441 | Telkom University</a>
 					</div>
 				</div>
 			</footer>
