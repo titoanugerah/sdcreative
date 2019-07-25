@@ -28,13 +28,13 @@
 	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
-			<div class="logo-header" data-background-color="blue">
+			<div class="logo-header" data-background-color="orange">
 
 				<a href="<?php echo base_url('dashboard'); ?>" class="logo">
-					<div class="row">
+					<center>
 						<img src="<?php echo base_url('./assets/upload/'.$content['webconf']->logo); ?>" alt="navbar brand" class="navbar-brand" style="width:60px;">
-						<h2 style="color:white;"><?php echo $content['webconf']->website_name; ?></h2>
-					</div>
+						<h3 style="color:white;" hidden><?php echo $content['webconf']->website_name; ?></h3>
+					</center>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -49,7 +49,7 @@
 				</div>
 			</div>
 
-			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="orange2">
 				<div class="container-fluid">
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 
