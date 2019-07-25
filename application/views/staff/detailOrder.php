@@ -423,7 +423,7 @@
                           </div>
                         </div>
                       </div>
-                      <button type="submit" name="confirmExecution" value="confirmExecution" class="btn btn-success">Upload</button>
+                      <button type="submit" name="confirmExecution" value="confirmExecution" class="btn btn-success">Konfirmasi Pekerjaan</button>
                     </div>
 
                     <div class="row" <?php if($content['order']->status!=7){echo 'hidden';} ?>>
