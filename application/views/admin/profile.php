@@ -1,4 +1,4 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header bg-warning-gradient">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
@@ -100,11 +100,11 @@
             <div class="form-group">
               <br>
             </center>
-            <input type="file" name="fileUpload" class="btn btn-primary">
+            <input type="file" name="fileUpload" class="btn btn-warning">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="upload" value="upload">Upload Foto</button>
+          <button type="submit" class="btn btn-warning" name="upload" value="upload">Upload Foto</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>

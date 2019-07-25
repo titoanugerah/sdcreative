@@ -1,4 +1,4 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header bg-warning-gradient">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
@@ -7,7 +7,7 @@
       <div class="ml-md-auto py-2 py-md-0">
         <div class="row">
 
-        <button type="button" class="btn btn-info btn-border btn-round" data-toggle="modal" data-target="#myModal">Tambah Staff</button>
+        <button type="button" class="btn btn-warning btn-border btn-round" data-toggle="modal" data-target="#myModal">Tambah Staff</button>
       </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <ul class="nav nav-pills nav-primary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
+          <ul class="nav nav-pills nav-warning  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#pills-home-icon" role="tab" aria-controls="pills-home-icon" aria-selected="true">
                 <i class="flaticon-user"></i>
@@ -36,9 +36,9 @@
             <div class="tab-pane fade show active" id="pills-home-icon" role="tabpanel" aria-labelledby="pills-home-tab-icon">
               <form  method="post">
               <div class="input-group col-md-12">
-                <input type="text" placeholder="Cari Akun Staf..." class="form-control btn-primary btn-border" name="keyword">
+                <input type="text" placeholder="Cari Akun Staf..." class="form-control btn-warning btn-border" name="keyword">
                 <div class="input-group-prepend">
-                  <button type="submit" class="btn btn-search btn-primary" name="find" value="find">
+                  <button type="submit" class="btn btn-search btn-warning" name="find" value="find">
                     <i class="fa fa-search search-icon"></i>&nbsp;Cari Akun
                   </button>
                 </div>
@@ -53,7 +53,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $item->fullname; ?></h5>
                         <p class="card-text"><?php echo '@'.$item->username ?></p>
-                        <a href="<?php echo base_url('detailAccount/'.$item->id); ?>" class="btn btn-primary">Detail Akun</a>
+                        <a href="<?php echo base_url('detailAccount/'.$item->id); ?>" class="btn btn-warning">Detail Akun</a>
                       </div>
                     </div>
                   </div>
@@ -132,7 +132,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="createAccount" value="createAccount">Buat Akun</button>
+          <button type="submit" class="btn btn-warning" name="createAccount" value="createAccount">Buat Akun</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>

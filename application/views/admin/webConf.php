@@ -1,4 +1,4 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header bg-warning-gradient">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
@@ -16,7 +16,7 @@
           <h4 class="card-title">Form Konfigurasi Website</h4>
         </div>
         <div class="card-body">
-          <ul class="nav nav-pills nav-primary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
+          <ul class="nav nav-pills nav-warning  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#pills-home-icon" role="tab" aria-controls="pills-home-icon" aria-selected="true">
                 <i class="flaticon-home"></i>
@@ -168,11 +168,11 @@
           <div class="form-group">
             <br>
           </center>
-          <input type="file" name="fileUpload" class="btn btn-primary">
+          <input type="file" name="fileUpload" class="btn btn-warning">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="upload" value="upload">Upload Foto</button>
+        <button type="submit" class="btn btn-warning" name="upload" value="upload">Upload Foto</button>
         <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
       </div>
     </form>

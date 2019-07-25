@@ -113,7 +113,7 @@
 							</div>
 						</div>
 					</div>
-					<ul class="nav nav-primary">
+					<ul class="nav nav-warning">
             <?php $this->load->view($this->session->userdata['role'].'/menu'); ?>
 					</ul>
 				</div>

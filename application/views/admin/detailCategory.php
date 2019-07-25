@@ -17,7 +17,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <ul class="nav nav-pills nav-primary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
+          <ul class="nav nav-pills nav-warning  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#pills-home-icon" role="tab" aria-controls="pills-home-icon" aria-selected="true">
                 <i class="flaticon-home"></i>
@@ -102,11 +102,11 @@
           <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['detail']->image); ?>" alt="Card image cap">
           <div class="form-group  col-6 col-md-12">
             <br>
-            <input type="file" name="fileUpload" class="btn btn-primary">
+            <input type="file" name="fileUpload" class="btn btn-warning">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="updateImage" value="updateImage">Update Gambar</button>
+          <button type="submit" class="btn btn-warning" name="updateImage" value="updateImage">Update Gambar</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>
@@ -135,7 +135,7 @@
             <div class="form-group col-6 col-md-12">
               <br>
             </center>
-            <input type="file" name="fileUpload" class="btn btn-primary">
+            <input type="file" name="fileUpload" class="btn btn-warning">
           </div>
           <div class="form-group col-6 col-md-6">
             <label>Harga</label>
@@ -153,7 +153,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="createPackage" value="createPackage">Buat Paket</button>
+        <button type="submit" class="btn btn-warning" name="createPackage" value="createPackage">Buat Paket</button>
         <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
       </div>
     </form>
@@ -184,7 +184,7 @@
               <div class="form-group col-6 col-md-12">
                 <br>
               </center>
-              <input type="file" name="fileUpload" class="btn btn-primary">
+              <input type="file" name="fileUpload" class="btn btn-warning">
             </div>
 
             <div class="form-group col-6 col-md-6">
@@ -203,8 +203,8 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="updatePackage" value="updatePackage">Update Paket</button>
-          <button type="submit" class="btn btn-primary" name="uploadImage" value="uploadImage">Ganti Foto</button>
+          <button type="submit" class="btn btn-warning" name="updatePackage" value="updatePackage">Update Paket</button>
+          <button type="submit" class="btn btn-warning" name="uploadImage" value="uploadImage">Ganti Foto</button>
           <button type="submit" class="btn btn-danger" name="deletePackage" value="deletePackage">Hapus</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
@@ -237,7 +237,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="restorePackage" value="restorePackage">Pulihkan</button>
+          <button type="submit" class="btn btn-warning" name="restorePackage" value="restorePackage">Pulihkan</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>
@@ -268,7 +268,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary" name="deleteCategory" value="deleteCategory">Hapus Kategori</button>
+          <button type="submit" class="btn btn-warning" name="deleteCategory" value="deleteCategory">Hapus Kategori</button>
           <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
         </div>
       </form>

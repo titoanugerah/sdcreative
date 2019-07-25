@@ -20,7 +20,7 @@
           <div class="card-body">
             <h5 class="card-title"><?php echo $item->category; ?></h5>
             <p class="card-text"><?php echo $item->info ?></p>
-            <a href="<?php echo base_url('detailCategory/'.$item->id); ?>" class="btn btn-primary">Detail Kategori</a>
+            <a href="<?php echo base_url('detailCategory/'.$item->id); ?>" class="btn btn-warning">Detail Kategori</a>
           </div>
         </div>
       </div>
@@ -48,11 +48,11 @@
           <div class="form-group  col-6 col-md-12">
             <br>
           </center>
-          <input type="file" name="fileUpload" class="btn btn-primary">
+          <input type="file" name="fileUpload" class="btn btn-warning">
         </div>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" name="createCategory" value="createCategory">Buat Kategori</button>
+        <button type="submit" class="btn btn-warning" name="createCategory" value="createCategory">Buat Kategori</button>
         <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
       </div>
     </form>
