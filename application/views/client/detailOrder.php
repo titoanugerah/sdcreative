@@ -375,13 +375,13 @@
                           <div class="card-body text-center">
                             <div class="card-opening">Lakukan pembayaran DP</div>
                             <div class="card-desc">
-                              Silahkan lakukan pembayaran sebanyak Rp. <?php echo number_format(($content['order']->subtotal/2),2,',','.'); ?> melalui proses transfer bank ke rekening <?php echo $content['webconf']->bank; ?> <?php echo $content['webconf']->bank_account; ?> a/n Putri Maulani. Apabila anda sudah melakukan proses pembayaran dp, silahkan lampirkan bukti pembayaran/transfer 
+                              Silahkan lakukan pembayaran sebanyak Rp. <?php echo number_format(($content['order']->subtotal/2),2,',','.'); ?> melalui proses transfer bank ke rekening <?php echo $content['webconf']->bank; ?> <?php echo $content['webconf']->bank_account; ?> a/n Putri Maulani. Apabila anda sudah melakukan proses pembayaran dp, silahkan lampirkan bukti pembayaran/transfer
                             </div>
                           </div>
                         </div>
-                        <input type="file" name="fileUpload" class="btn btn-warning">
+                        <input type="file" name="fileUpload" class="btn btn-warning" required>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="payment_amount_1" class="form-control col-6" placeholder="Masukan nominal pengiriman anda disini contoh 300000">
+                        <input type="text" name="payment_amount_1" class="form-control col-6" placeholder="Masukan nominal pengiriman anda disini contoh 300000" required>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button type="submit" name="uploadPayment1" value="uploadPayment1" class="btn btn-success">Upload</button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
