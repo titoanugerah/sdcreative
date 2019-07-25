@@ -71,7 +71,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $item->package; ?></h5>
                         <p><?php echo $item->description; ?></p>
-                        <h5 style="color:green;"><b><?php echo 'Rp. '.number_format($item->price, 2, ',', '.') ?></b></h5>
+                        <h5 style="color:green;"><b><?php echo 'Rp. '.number_format($item->price, 2, ',', '.'); ?></b></h5>
                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
                       </div>
                     </div>

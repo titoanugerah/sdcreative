@@ -35,8 +35,8 @@
                             <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$item->image); ?>" alt="Card image cap">
                             <div class="card-body">
                               <h5 class="card-title"><?php echo $item->package; ?></h5>
-                              <h5 style="color:green;"><b><?php echo 'Rp. '.$item->price; ?></b></h5>
-                              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
+                              <h5 style="color:green;"><b><?php echo 'Rp. '.number_format($item->price,2,',','.'); ?></b></h5>
+                              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
                             </div>
                           </div>
                         </div>
