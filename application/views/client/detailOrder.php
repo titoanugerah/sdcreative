@@ -1,4 +1,4 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header bg-warning-gradient">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
@@ -13,7 +13,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <ul class="nav nav-pills nav-primary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
+            <ul class="nav nav-pills nav-warning  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
               <li class="nav-item">
                 <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#information" role="tab" aria-controls="information" aria-selected="true">
                   <i class="flaticon-location"></i>
@@ -379,7 +379,7 @@
                             </div>
                           </div>
                         </div>
-                        <input type="file" name="fileUpload" class="btn btn-primary">
+                        <input type="file" name="fileUpload" class="btn btn-warning">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="text" name="payment_amount_1" class="form-control col-6" placeholder="Masukan nominal pengiriman anda disini contoh 300000">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -431,7 +431,7 @@
                         </div>
                       </div>
                     </div>
-                    <input type="file" name="fileUpload" class="btn btn-primary">
+                    <input type="file" name="fileUpload" class="btn btn-warning">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="text" name="payment_amount_2" class="form-control col-6" placeholder="Masukan nominal pengiriman anda disini contoh 300000">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -1,4 +1,4 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header bg-warning-gradient">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
@@ -18,7 +18,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-5 col-md-2">
-            <div class="nav flex-column nav-pills nav-primary nav-pills-no-bd" id="v-pills-tab-without-border" role="tablist" aria-orientation="vertical">
+            <div class="nav flex-column nav-pills nav-warning nav-pills-no-bd" id="v-pills-tab-without-border" role="tablist" aria-orientation="vertical">
               <?php $i = 1; foreach ($content['category'] as $item): ?>
                 <a class="nav-link <?php if($i==1){echo 'active';} ?>"  data-toggle="pill" href="#<?php echo $item->id;  ?>" role="tab" aria-controls="<?php echo $item->id;  ?>" aria-selected="true"><?php echo $item->category; ?></a>
                 <?php $i++;endforeach; ?>

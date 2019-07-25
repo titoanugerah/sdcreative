@@ -1,4 +1,4 @@
-<div class="panel-header bg-primary-gradient">
+<div class="panel-header bg-warning-gradient">
   <div class="page-inner py-5">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
       <div>
@@ -12,7 +12,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-body">
-          <ul class="nav nav-pills nav-primary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
+          <ul class="nav nav-pills nav-warning  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="pills-home-tab-icon" data-toggle="pill" href="#process" role="tab" aria-controls="process" aria-selected="true">
                 <i class="flaticon-stopwatch"></i>
@@ -44,7 +44,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $item->package; ?></h5>
                         <p class="card-text"><?php echo $item->date_event ?></p>
-                        <a href="<?php echo base_url('detailOrder/'.$item->id); ?>" class="btn btn-primary">Detail Order</a>
+                        <a href="<?php echo base_url('detailOrder/'.$item->id); ?>" class="btn btn-warning">Detail Order</a>
                       </div>
                     </div>
                   </div>
@@ -61,7 +61,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $item->package; ?></h5>
                         <p class="card-text"><?php echo $item->date_event ?></p>
-                        <a href="<?php echo base_url('detailOrder/'.$item->id); ?>" class="btn btn-primary">Detail Order</a>
+                        <a href="<?php echo base_url('detailOrder/'.$item->id); ?>" class="btn btn-warning">Detail Order</a>
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $item->package; ?></h5>
                         <p class="card-text"><?php echo $item->date_event ?></p>
-                        <a href="<?php echo base_url('detailOrder/'.$item->id); ?>" class="btn btn-primary">Detail Order</a>
+                        <a href="<?php echo base_url('detailOrder/'.$item->id); ?>" class="btn btn-warning">Detail Order</a>
                       </div>
                     </div>
                   </div>
