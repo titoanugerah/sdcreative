@@ -140,7 +140,7 @@
                               <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $item->package; ?></td>
-                                <td><?php echo 'Rp. '.$item->price; ?></td>
+                                <td><?php echo 'Rp. '.number_format($item->price,2,',','.'); ?></td>
                               </tr>
                               <?php $i++;endforeach; ?>
                             </tbody>
@@ -375,7 +375,7 @@
                           <div class="card-body text-center">
                             <div class="card-opening">Lakukan pembayaran DP</div>
                             <div class="card-desc">
-                              Silahkan lakukan pembayaran sebanyak Rp. <?php echo ($content['order']->subtotal/2); ?> melalui proses transfer bank ke rekening <?php echo $content['webconf']->bank; ?> <?php echo $content['webconf']->bank_account; ?>. apabila anda sudah melakukan proses pembayaran dp, silahkan lampirkan bukti pembayaran/transfer
+                              Silahkan lakukan pembayaran sebanyak Rp. <?php echo number_format(($content['order']->subtotal/2),2,',','.'); ?> melalui proses transfer bank ke rekening <?php echo $content['webconf']->bank; ?> <?php echo $content['webconf']->bank_account; ?> a/n Putri Maulani. Apabila anda sudah melakukan proses pembayaran dp, silahkan lampirkan bukti pembayaran/transfer 
                             </div>
                           </div>
                         </div>
