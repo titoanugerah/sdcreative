@@ -258,14 +258,7 @@
                               <div class="row">
 
                                 <?php for($i=1; $i<=$content['order']->pic_count; $i++){ ?>
-                                  <div class="col-md-4">
-                                    <div class="card" >
-                                      <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic1); ?>" alt="Card image cap">
-                                      <div class="card-body">
-                                        <h5 class="card-title"><?php echo $content['order']->fullname_pic1; ?></h5>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  <h5 class="card-title"><?php echo $content['order']->fullname_pic1.','.$content['order']->fullname_pic2; ?></h5>
                                 <?php } ?>
                               </div>
                             </div>
