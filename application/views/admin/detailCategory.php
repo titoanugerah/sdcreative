@@ -51,7 +51,7 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info"  name="updateCategory" value="updateCategory">Update Data</button>
+                  <button type="submit" class="btn btn-warning"  name="updateCategory" value="updateCategory">Update Data</button>
                   <button type="button" class="btn btn-success " data-toggle="modal" data-target="#myModal">Ganti Gambar</button>
                   <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal3">Hapus Kategori</button>
                   <a href="<?php echo base_url('category'); ?>" class="btn btn-secondary">Kembali</a>
@@ -72,7 +72,7 @@
                         <h5 class="card-title"><?php echo $item->package; ?></h5>
                         <p><?php echo $item->description; ?></p>
                         <h5 style="color:green;"><b><?php echo 'Rp. '.number_format($item->price, 2, ',', '.') ?></b></h5>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
+                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#detail<?php echo $item->id?>">Detail Paket</button>
                       </div>
                     </div>
                   </div>
