@@ -179,7 +179,7 @@
                         <div class="card" >
                           <img class="card-img-top" src="<?php echo base_url('./assets/upload/'.$content['order']->dp_pic.$i); ?>" alt="Card image cap">
                           <div class="card-body">
-                            <h5 class="card-title"><?php echo $content['order']->fullname_pic.$i ?></h5>
+                            <p><?php echo $content['order']->fullname_pic.$i ?></p>
                           </div>
                         </div>
                       </div>
@@ -279,7 +279,7 @@
 
                           <div class="timeline-panel">
                             <div class="timeline-heading">
-                              <h4 class="timeline-title"><?php for($i=1; $i<$content['order']->pic_count; $i++){echo $content['order']->fullname_pic.$i;} ?></h4>
+                              <h4 class="timeline-title"><?php echo $content['order']->fullname_pic1; ?></h4>
                             </div>
                             <div class="timeline-body">
                               <p>Mengirimkan hasil pengambilan gambar yang diunggah pada link (<?php echo $content['order']->link_1; ?>)</p>
