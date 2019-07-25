@@ -123,7 +123,7 @@ class Staff_model extends CI_Model
   {
     $id = $this->session->userdata['id'];
     $data['order'] = $this->db->query('select * from view_order where pic_1 = '.$id.' or pic_2 = '.$id.' or pic_3 = '.$id.' or pic_4 = '.$id.' or pic_5 = '.$id.' or pic_6 = '.$id.' or pic_7 = '.$id.' or pic_8 = '.$id.' or pic_9 = '.$id.' or pic_10 = '.$id)->result();
-    $data['webconf'] = $this->getDataRow('webConf','id',1);
+    $data['webconf'] = $this->getDataRow('webconf','id',1);
     $data['view_name'] = 'listJob';
     return $data;
   }
