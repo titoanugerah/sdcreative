@@ -87,7 +87,12 @@ class General extends CI_Controller {
 		if ($this->session->userdata['role']=='client') {redirect(base_url('placeOrder/'.$id_order));}
 		elseif ($this->session->userdata['role']=='admin') {redirect(base_url('detailOrder/'.$id_order));}
 		elseif ($this->session->userdata['role']=='staff') {redirect(base_url('detailOrder/'.$id_order));}
+	}
 
+	public function invoice($id)
+	{
+		$data['content'] = $this->general_model->cInvoice($id);
+		$this->load->view('template',$data);
 	}
 
 }

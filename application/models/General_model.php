@@ -220,6 +220,15 @@ class General_model extends CI_Model{
     $this->sentEmail($this->input->post('email'), 'Pengguna', 'Selamat Datang Pelanggan Baru', $content);
   }
 
+  public function cInvoice($id)
+  {
+    $data['listOrder'] = $this->getSomeData('view_detail_order', 'id_order',$id);
+    $data['order'] = $this->getDataRow('view_order', 'id', $id);
+    $data['view_name'] = 'invoice';
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    return $data;
+  }
+
 }
 
  ?>

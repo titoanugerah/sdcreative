@@ -7,7 +7,7 @@ $route['login'] = 'general/login';
 $route['profile'] = 'general/profile';
 $route['logout'] = 'general/logout';
 $route['register'] = 'general/register';
-
+$route['invoice/(:any)'] = 'general/invoice/$1';
 
 //ADMIN AREA
 $route['webConf'] = 'admin/webConf';
@@ -19,6 +19,7 @@ $route['dashboard'] = 'general/dashboard';
 $route['recapOrder'] = 'admin/recapOrder';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
 
 //CLIENT AREA
 $route['newOrder'] = 'client/newOrder';
