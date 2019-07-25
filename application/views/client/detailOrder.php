@@ -494,8 +494,8 @@
                     </label>
                   </div>
                 </div>
+                <button type="submit" name="submitRating" value="submitRating" class="btn btn-success">Simpan</button>
               </div>
-              <button type="submit" name="submitRating" value="submitRating" class="btn btn-success">Simpan</button>
             </form>
 
                 </div>
