@@ -5,8 +5,8 @@
         <h2 class="text-white pb-2 fw-bold">Detail Kategori <?php echo $content['detail']->category; ?></h2>
       </div>
       <div class="ml-md-auto py-2 py-md-0">
-        <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal1"><b>Tambah Paket</b></button>&nbsp;
-        <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal2"><b>Pulihkan Paket Terhapus</b></button>
+        <button type="button" class="btn btn-warning btn-round" data-toggle="modal" data-target="#myModal1"><b>Tambah Paket</b></button>&nbsp;
+        <button type="button" class="btn btn-warning btn-round" data-toggle="modal" data-target="#myModal2"><b>Pulihkan Paket Terhapus</b></button>
 
       </div>
     </div>
