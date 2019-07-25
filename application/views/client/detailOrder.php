@@ -192,7 +192,7 @@
                             <div class="timeline-badge success"><i class="flaticon-<?php if($content['order']->status==0){echo 'danger';} else {echo 'alarm';} ?>"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                                <h4 class="timeline-title"><?php echo $content['order']->admin.'(Admin)'.'(Admin)'; ?></h4>
                                 <p><small class="text-muted"><i class="flaticon-message"></i> <?php echo $content['order']->date_respond; ?></small></p>
                               </div>
                               <div class="timeline-body">
@@ -219,7 +219,7 @@
                             <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                                <h4 class="timeline-title"><?php echo $content['order']->admin.'(Admin)'; ?></h4>
                               </div>
                               <div class="timeline-body">
                                 <p>Berhasil melakukan verifikasi pembayaran <?php echo $content['order']->fullname ?></p>
@@ -231,10 +231,10 @@
                             <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                                <h4 class="timeline-title"><?php echo $content['order']->admin.'(Admin)'; ?></h4>
                               </div>
                               <div class="timeline-body">
-                                <p><?php echo $content['order']->admin ?> selaku admin memilih petugas untuk project ini antara lain </p>
+                                <p><?php echo $content['order']->admin.'(Admin)' ?> selaku admin memilih petugas untuk project ini antara lain </p>
                                 <div class="row">
 
                                   <?php for($i=1; $i<=$content['order']->pic_count; $i++){ ?>
@@ -312,7 +312,7 @@
 
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                                <h4 class="timeline-title"><?php echo $content['order']->admin.'(Admin)'; ?></h4>
                               </div>
                               <div class="timeline-body">
                                 <p>Berhasil melakukan verifikasi pembayaran <?php echo $content['order']->fullname ?></p>
@@ -339,7 +339,7 @@
                             <div class="timeline-badge success"><i class="flaticon-alarm"></i></div>
                             <div class="timeline-panel">
                               <div class="timeline-heading">
-                                <h4 class="timeline-title"><?php echo $content['order']->admin; ?></h4>
+                                <h4 class="timeline-title"><?php echo $content['order']->admin.'(Admin)'; ?></h4>
                               </div>
                               <div class="timeline-body">
                                 <p>Berhasil mengirimkan hasil hardfile gambar ke lokasi yang ditentukan ( <?php echo $content['order']->address_sent; ?>) dengan nomor resi <?php echo $content['order']->awb; ?> </p>
