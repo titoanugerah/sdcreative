@@ -255,9 +255,7 @@
                             </div>
                             <div class="timeline-body">
                               <p><?php echo $content['order']->admin ?> selaku admin memilih petugas untuk project ini antara lain </p>
-                              <div class="row">
                                 <h5 class="card-title"><?php echo $content['order']->fullname_pic1.','.$content['order']->fullname_pic2; ?></h5>
-                              </div>
                             </div>
                           </div>
                         </li>
