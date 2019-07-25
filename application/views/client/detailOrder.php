@@ -119,6 +119,8 @@
                     </div>
                   </div>
 
+                  <a href="<?php echo base_url('invoice/'.$content['order']->id) ?>" class="btn btn-info">Nota pembayaran</a>
+
                 </div>
               </div>
               <div class="tab-pane fade" id="order" role="tabpanel" aria-labelledby="pills-profile-tab-icon">
