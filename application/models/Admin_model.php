@@ -273,6 +273,12 @@ class Admin_model extends CI_Model{
     $this->db->update('order', $data = array('status' => 3, 'date_respond' =>date('Y-m-d H:i:s'), 'id_admin' => $this->session->userdata['id']));
   }
 
+  public function declineOrder($id)
+  {
+    $this->db->where($where = array('id' => $id ));
+    $this->db->update('order', $data = array('status' => 0, 'date_respond' =>date('Y-m-d H:i:s'), 'id_admin' => $this->session->userdata['id']));
+  }
+
   public function verifyPayment($id_order, $status)
   {
     $this->updateData('order', 'id', $id_order, 'status', $status);

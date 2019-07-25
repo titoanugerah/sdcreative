@@ -64,8 +64,9 @@ class General extends CI_Controller {
 	{
 		if($this->input->post('addOrder')){$this->admin_model->addOrder($id);}
 		elseif($this->input->post('acceptOrder')){$this->admin_model->acceptOrder($id);}
-		elseif($this->input->post('uploadPayment1')){$this->client_model->uploadPayment($id, 1);}
+		elseif($this->input->post('declineOrder')){$this->admin_model->declineOrder($id);}
 		elseif($this->input->post('verifyPayment1')){$this->admin_model->verifyPayment($id, 5);}
+		elseif($this->input->post('uploadPayment1')){$this->client_model->uploadPayment($id, 1);}
 		elseif($this->input->post('setPIC')){$this->admin_model->setPIC($id);}
 		elseif($this->input->post('addExtraOrder')){$this->staff_model->addExtraOrder($id);}
 		elseif($this->input->post('confirmExecution')){$this->staff_model->confirmExecution($id);}

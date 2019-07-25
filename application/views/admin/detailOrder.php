@@ -390,6 +390,8 @@
                     <div class="" <?php if($content['order']->status!=2){echo 'hidden';} ?>>
                       <p>Untuk menyetujui silahkan klik button dibawah ini</p>
                       <button type="submit" name="acceptOrder" value="acceptOrder" class="btn btn-success">Setujui</button>
+                      <button type="submit" name="declineOrder" value="declineOrder" class="btn btn-danger">Tolak</button>
+
                     </div>
 
                     <div class="row" <?php if($content['order']->status!=4){echo 'hidden';} ?>>
