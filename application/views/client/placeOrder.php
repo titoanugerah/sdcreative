@@ -163,7 +163,7 @@
                       <tr>
                         <td><?php echo $i; ?></td>
                         <td><?php echo $item->package; ?></td>
-                        <td><?php echo 'Rp. '.$item->price; ?></td>
+                        <td><?php echo 'Rp. '.number_format($item->price,2,',','.'); ?></td>
                         <td> <a href="<?php echo base_url('deleteDetailOrder/'.$content['order']->id.'/'.$item->id);?>" class="btn btn-danger">Hapus Layanan</a> </td>
                       </tr>
                       <?php $i++;endforeach; ?>

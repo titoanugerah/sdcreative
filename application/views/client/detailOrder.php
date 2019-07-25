@@ -81,7 +81,7 @@
 
                     <div class="form-group col-3 ">
                       <label>Total Layanan</label>
-                      <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->total; ?>" readonly>
+                      <input type="text" class="form-control" value="<?php echo 'Rp. '.number_format($content['order']->total,2,',','.'); ?>" readonly>
                     </div>
 
                     &nbsp;&nbsp;
@@ -98,12 +98,12 @@
 
                     <div class="form-group col-2 ">
                       <label>Diskon</label>
-                      <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->discount; ?>" readonly>
+                      <input type="text" class="form-control" value="<?php echo 'Rp. '.number_format($content['order']->discount,2,',','.'); ?>" readonly>
                     </div>
 
                     <div class="form-group col-3 ">
                       <label>Sub Total</label>
-                      <input type="text" class="form-control" value="<?php echo 'Rp. '.$content['order']->subtotal; ?>" readonly>
+                      <input type="text" class="form-control" value="<?php echo 'Rp. '.number_format($content['order']->subtotal,2,',','.'); ?>" readonly>
                     </div>
                   </div>
 
