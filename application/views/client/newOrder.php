@@ -78,7 +78,7 @@
               </div>
             </div>
             <div class="modal-footer">
-              <a href="<?php echo base_url('createOrder/'.$item->id) ?>" class="btn btn-success">Pilih Paket</a>
+              <a href="<?php echo base_url('createOrder/'.$item->id) ?>" class="btn btn-warning">Pilih Paket</a>
               <button type="button" class="btn btn-grey" data-dismiss="modal">Kembali</button>
             </div>
           </div>
