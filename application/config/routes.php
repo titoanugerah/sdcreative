@@ -9,6 +9,7 @@ $route['logout'] = 'general/logout';
 $route['register'] = 'general/register';
 $route['invoice/(:any)'] = 'general/invoice/$1';
 $route['staffList'] = 'general/staffList';
+$route['catalogue'] = 'general/whatWeDo';
 
 //ADMIN AREA
 $route['webConf'] = 'admin/webConf';

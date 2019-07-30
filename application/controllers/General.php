@@ -34,7 +34,8 @@ class General extends CI_Controller {
 	public function login()
 	{
 		if ($this->input->post('loginValidation')) {
-			if ($this->general_model->loginValidation()['status']==1)  {$this->session->set_userdata($this->general_model->loginValidation()['account']); redirect(base_url('dashboard'));}
+			if ($this->general_model->loginValidation()['status']==1)  {$this->session->set_userdata($this->general_model->loginValidation()['account']);
+			if ($this->session->userdata['role']== 'admin'){redirect(base_url('dashboard'));} elseif($this->session->userdata['role']== 'client') {redirect(base_url('newOrder'));}elseif($this->session->userdata['role']== 'staff') {redirect(base_url('listJob'));}}
 		}
 		$data['content'] = $this->general_model->cLogin();
 		$this->load->view('login', $data);
@@ -99,6 +100,12 @@ class General extends CI_Controller {
 	{
 		$data['content'] = $this->general_model->cStaffList();
 		$this->load->view('front/staffList',$data);
+	}
+
+	public function whatWeDo()
+	{
+		$data['content'] = $this->general_model->cWhatWeDo();
+		$this->load->view('front/whatWeDo',$data);
 	}
 
 }
