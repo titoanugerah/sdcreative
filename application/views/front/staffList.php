@@ -218,6 +218,16 @@
         </div>
       </div>
 
+      <div class="single_gallery_item event prewedding fadeInUp" data-wow-delay="0.6s">
+        <img src="<?php echo base_url('./assets/catalogue/catalogue(14).jpeg'); ?>" alt="">
+        <div class="hover-content text-center d-flex align-items-center justify-content-center">
+          <div class="hover-text">
+            <a href="<?php echo base_url('./assets/catalogue/catalogue(14).jpeg'); ?>" class="zoom-img"><i class="fa fa-eye" aria-hidden="true"></i></a>
+            <h4>Prewedding</h4>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- ##### Portfolio Area End ###### -->
