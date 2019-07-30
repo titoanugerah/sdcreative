@@ -159,6 +159,14 @@ class General_model extends CI_Model{
 
   public function cDashboard()
   {
+    if ($this->session->userdata['role']=='admin') {
+      $data['revenue'] = $this->db->query('select (sum(ifnull(payment_amount_1,0)) + sum(ifnull(payment_amount_2,0))) as revenue, count(*) as project from `order`')->row();
+      $data['estimatedRevenue'] = $this->db->query('select sum(price) as estimated from detail_order, `order`, package where  detail_order.id_package = package.id and `order`.status>0')->row();
+      $data['totalProject'] = $this->db->query('select `status`, count(*) as totalProject  from `order` group by status')->result();
+      $data['account'] = $this->db->query('select count(*) as user  from `account` where role = "client" group by role')->row();
+
+//      var_dump($data['totalProject']);die;
+    }
     $data['webconf'] = $this->getDataRow('webconf','id', 1);
     $data['view_name'] = 'dashboard';
     return $data;
