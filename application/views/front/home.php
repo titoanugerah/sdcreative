@@ -52,7 +52,7 @@
               <!-- Nav Start -->
               <div class="classynav">
                 <ul>
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="<?php echo base_url(); ?>">Home</a></li>
                   <li><a href="<?php echo base_url('login'); ?>">Login</a></li>
                 </ul>
 
