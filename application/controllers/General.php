@@ -95,4 +95,10 @@ class General extends CI_Controller {
 		$this->load->view('template',$data);
 	}
 
+	public function staffList()
+	{
+		$data['content'] = $this->general_model->cStaffList();
+		$this->load->view('front/staffList',$data);
+	}
+
 }

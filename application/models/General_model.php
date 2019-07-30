@@ -229,6 +229,14 @@ class General_model extends CI_Model{
     return $data;
   }
 
+  public function cStaffList()
+  {
+//    $data['view_name'] = 'invoice';
+    $data['staff'] = $this->getSomeData('account', 'role', 'staff');
+    $data['webconf'] = $this->getDataRow('webconf', 'id', 1);
+    return $data;
+  }
+
 }
 
  ?>

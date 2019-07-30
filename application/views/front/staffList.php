@@ -115,39 +115,48 @@
   <!-- ##### Hero Area End ##### -->
 
   <!-- ##### Top Catagory Area Start ##### -->
-  <div class="top-catagory-area d-flex flex-wrap">
-    <!-- Single Catagory -->
-    <div class="single-catagory bg-img d-flex align-items-center justify-content-center jarallax" style="background-image: url(<?php echo base_url('./assets/template/pixel/'); ?>img/bg-img/3.jpg);">
-      <a href="<?php echo base_url('catalogue'); ?>">What We Do?</a>
-    </div>
-    <!-- Single Catagory -->
-    <div class="single-catagory bg-img d-flex align-items-center justify-content-center jarallax" style="background-image: url(<?php echo base_url('./assets/template/pixel/'); ?>img/bg-img/4.jpg);">
-      <a href="<?php echo base_url('staffList'); ?>">Agency</a>
-    </div>
-  </div>
-  <!-- ##### Top Catagory Area End ##### -->
 
-  <!-- ##### Newsletter Area Start ###### -->
-  <section class="nl-area section-padding-100-0" hidden>
+  <!-- ##### Top Catagory Area End ##### -->
+  <section class="team-member-area section-padding-100-0">
     <div class="container">
-      <div class="row align-items-end">
-        <div class="col-12 col-md-9">
-          <div class="nl-form mb-100">
-            <h4>Cek Progress Pesanan</h4>
-            <form action="#" method="post">
-              <input type="text" name="nl-email" id="nlEmail" placeholder="Masukan Pesanan">
-              <button type="submit" class="d-none"></button>
-            </form>
-          </div>
-        </div>
-        <div class="col-12 col-md-3">
-          <div class="view-projects-btn text-right mb-100">
-            <a href="#" class="btn pixel-btn">Cek Progress</a>
+      <div class="row">
+        <div class="col-12">
+          <!-- Section Heading -->
+          <div class="section-heading text-center">
+            <h2>Our Team</h2>
+            <img class="mb-30" src="img/core-img/x.png" alt="">
+            <p>.</p>
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <!-- Single Team Member -->
+        <?php foreach ($content['staff'] as $item): ?>
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="single-team-member mb-100">
+            <img src="<?php echo base_url('assets/upload/'.$item->display_picture); ?>" alt="">
+            <!-- Hover Text -->
+            <div class="hover-text d-flex align-items-end justify-content-center text-center">
+              <div class="hover--">
+                <h4><?php echo $item->fullname; ?></h4>
+                <h6>Digital Designer</h6>
+                <div class="social-info">
+                  <a href="mailto:<?php echo $item->email; ?>"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  <a href="tel:<?php echo $item->phone_number; ?>"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
     </div>
   </section>
+  <!-- ##### Newsletter Area Start ###### -->
+
   <!-- ##### Newsletter Area End ###### -->
 
   <!-- ##### Portfolio Area Start ###### -->
