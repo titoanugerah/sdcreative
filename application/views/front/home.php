@@ -167,43 +167,43 @@
     <div class="pixel-projects-menu wow fadeInUp" data-wow-delay="200ms">
       <div class="text-center portfolio-menu">
         <button class="btn active" data-filter="*">All Projects</button>
-        <button class="btn" data-filter=".endorse">Endorse</button>
-        <button class="btn" data-filter=".visual">Visual</button>
-        <button class="btn" data-filter=".event">Event</button>
+        <button class="btn" data-filter=".photography">Photography</button>
+        <button class="btn" data-filter=".wedding">Wedding</button>
+        <button class="btn" data-filter=".prewedding">Prewedding</button>
       </div>
     </div>
 
     <div class="pixel-portfolio">
 
       <!-- Single gallery Item -->
-      <div class="single_gallery_item visual wow fadeInUp" data-wow-delay="0.2s">
+      <div class="single_gallery_item photography wow fadeInUp" data-wow-delay="0.2s">
         <img src="<?php echo base_url('./assets/catalogue/catalogue(1).jpeg'); ?>" alt="" style="height: 562px;">
         <div class="hover-content text-center d-flex align-items-center justify-content-center">
           <div class="hover-text">
             <a href="<?php echo base_url('./assets/catalogue/catalogue(1).jpeg'); ?>" class="zoom-img"><i class="fa fa-eye" aria-hidden="true"></i></a>
-            <h4>Branding Identity</h4>
+            <h4>Photography</h4>
           </div>
         </div>
       </div>
 
       <!-- Single gallery Item -->
-      <div class="single_gallery_item endorse wow fadeInUp" data-wow-delay="0.4s">
+      <div class="single_gallery_item wedding wow fadeInUp" data-wow-delay="0.4s">
         <img src="<?php echo base_url('./assets/catalogue/catalogue(27).jpeg'); ?>" alt="">
         <div class="hover-content text-center d-flex align-items-center justify-content-center">
           <div class="hover-text">
             <a href="<?php echo base_url('./assets/catalogue/catalogue(27).jpeg'); ?>" class="zoom-img"><i class="fa fa-eye" aria-hidden="true"></i></a>
-            <h4>Branding Identity</h4>
+            <h4>Wedding</h4>
           </div>
         </div>
       </div>
 
       <!-- Single gallery Item -->
-      <div class="single_gallery_item event wow fadeInUp" data-wow-delay="0.6s">
+      <div class="single_gallery_item event prewedding fadeInUp" data-wow-delay="0.6s">
         <img src="<?php echo base_url('./assets/catalogue/catalogue(4).jpeg'); ?>" alt="">
         <div class="hover-content text-center d-flex align-items-center justify-content-center">
           <div class="hover-text">
             <a href="<?php echo base_url('./assets/catalogue/catalogue(4).jpeg'); ?>" class="zoom-img"><i class="fa fa-eye" aria-hidden="true"></i></a>
-            <h4>Branding Identity</h4>
+            <h4>Prewedding</h4>
           </div>
         </div>
       </div>
